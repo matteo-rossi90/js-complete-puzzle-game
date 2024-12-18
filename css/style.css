@@ -24,10 +24,11 @@ body{
 }
 
 #box-btn{
+    display: none;
     padding-bottom: 1.5rem;
 }
 
-#reset{
+button{
     padding: 8px 16px;
     border-radius: 50px;
     border: 1px solid var(--color-white);
@@ -36,7 +37,7 @@ body{
     cursor: pointer;
 }
 
-#reset:hover{
+button:hover{
     background-color: var(--color-white);
     color: var(--color-dark-bg);
 }
