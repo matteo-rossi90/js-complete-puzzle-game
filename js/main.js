@@ -19,19 +19,21 @@ const imgCat = [
 ];
 
 //individuare l'elemento corrispondente al pulsante di inizio gioco
-const start = document.getElementById('start-game')
+const action = document.getElementById('action')
+
+const boxButton = document.getElementById('box-btn');
+//individuare il pulsante reset
+const reset = document.getElementById('reset');
+
+//individuare l'area in cui le tiles vengono trascinate le tessere
+const boardBox = document.getElementById('puzzle-board');
+//individuare l'area che ospita le tessere da trascinare
+const boardGame = document.getElementById('tiles-box');
+//all'avvio del gioco rimescola le tessere in ordine casuale
+const shuffledImages = shuffleArray(imgCat)
 
 //al click del pulsante inizia il gioco
-start.addEventListener('click', () =>{
-
-    //individuare l'area in cui le tiles vengono trascinate le tessere
-    const boardBox = document.getElementById('puzzle-board');
-
-    //individuare l'area che ospita le tessere da trascinare
-    const boardGame = document.getElementById('tiles-box');
-
-    //all'avvio del gioco rimescola le tessere in ordine casuale
-    const shuffledImages = shuffleArray(imgCat)
+action.addEventListener('click', () =>{
 
     //iterare le tessere per inserirle nell'area per poter essere trascinate
     for (let i = 0; i < shuffledImages.length; i++) {
@@ -59,6 +61,15 @@ start.addEventListener('click', () =>{
 
         boardBox.appendChild(dropZone); // inserire tutti gli elementi nell'area di gioco
     }
+
+    action.style.display = 'none'
+
+    reset.style.display = 'block';
+
+    //pulsante per iniziare una nuova partita
+     reset.addEventListener('click', function () {
+        location.reload();
+    });
 
 })
 

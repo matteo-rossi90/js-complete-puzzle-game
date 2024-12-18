@@ -24,8 +24,14 @@ body{
 }
 
 #box-btn{
-    display: none;
+    display: flex;
+    justify-content: center;
+
     padding-bottom: 1.5rem;
+}
+
+#reset{
+    display: none;
 }
 
 button{

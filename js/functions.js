@@ -40,18 +40,9 @@ function drop(event) {
                 message.innerHTML = 'Congratulazioni, hai vinto!' //mostra il messaggio se le tessere sono nella posizione giusta
             } else {
                 const message = document.getElementById('message')
-                
-                const boxButton = document.getElementById('box-btn');
-                //individuare il pulsante reset
-                const reset = document.getElementById('reset');
 
                 message.style.display = 'block';
                 message.innerHTML = 'Game over!' //mostra il messaggio se le tessere sono nella posizione sbagliata
-                boxButton.style.display = 'block';
-                //pulsante per iniziare una nuova partita
-                reset.addEventListener('click', function () {
-                    location.reload();
-                });
             }
 
         }
