@@ -1,0 +1,132 @@
+*{
+    font-family:'Courier New', Courier, monospace;
+    box-sizing:border-box;
+    padding: 0;
+    margin: 0;
+    text-align: center
+}
+
+:root{
+    --color-white: white;
+    --color-dark-bg : rgb(48, 48, 48);
+    --color-dark-grey: rgb(63, 63, 63);
+}
+
+body{
+    background-color: var(--color-dark-bg);
+}
+
+#title{
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 4rem;
+    padding-bottom: 1.5rem;
+}
+
+#box-btn{
+    padding-bottom: 1.5rem;
+}
+
+#reset{
+    padding: 8px 16px;
+    border-radius: 50px;
+    border: 1px solid var(--color-white);
+    background-color:transparent;
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+#reset:hover{
+    background-color: var(--color-white);
+    color: var(--color-dark-bg);
+}
+
+#guide{
+    color: var(--color-white);
+    padding-bottom: 1.5rem;
+}
+
+#guide p{
+    text-align: left;
+    margin: 0 auto;
+    width: 90%;
+}
+
+#container{
+    width: 60%;
+    margin: 2rem auto;
+    border-radius: 20px;
+}
+
+#puzzle-box{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#puzzle-board{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 500px;
+    gap: 5px;
+    margin: 1rem 0;
+}
+
+#tiles-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 400px;
+    gap: 5px;
+    margin: 1rem 0;
+}
+
+.tiles{
+    height: 80px;
+    width: 80px;
+    background-color: var(--color-dark-grey);
+}
+
+.tiles-drag{
+    height: 100px;
+    width: 100px;
+    background-color: var(--color-dark-grey);
+}
+
+img{
+    max-width: 100%;
+    object-fit: cover;
+}
+
+#message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--color-white);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 2rem;
+    text-align: center;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.show{
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
