@@ -18,6 +18,25 @@ const imgCat = [
     './img/img_cat/16.jpg',
 ];
 
+const imgFlower = [
+    './img/img_flower/1.jpg',
+    './img/img_flower/2.jpg',
+    './img/img_flower/3.jpg',
+    './img/img_flower/4.jpg',
+    './img/img_flower/5.jpg',
+    './img/img_flower/6.jpg',
+    './img/img_flower/7.jpg',
+    './img/img_flower/8.jpg',
+    './img/img_flower/9.jpg',
+    './img/img_flower/10.jpg',
+    './img/img_flower/11.jpg',
+    './img/img_flower/12.jpg',
+    './img/img_flower/13.jpg',
+    './img/img_flower/14.jpg',
+    './img/img_flower/15.jpg',
+    './img/img_flower/16.jpg',
+]
+
 //individuare l'elemento corrispondente al pulsante di inizio gioco
 const action = document.getElementById('action')
 
@@ -30,7 +49,7 @@ const boardBox = document.getElementById('puzzle-board');
 //individuare l'area che ospita le tessere da trascinare
 const boardGame = document.getElementById('tiles-box');
 //all'avvio del gioco rimescola le tessere in ordine casuale
-const shuffledImages = shuffleArray(imgCat)
+const shuffledImages = shuffleArray(imgFlower)
 
 //al click del pulsante inizia il gioco
 action.addEventListener('click', () =>{
@@ -52,7 +71,7 @@ action.addEventListener('click', () =>{
     }
 
     //iterare le tessere nell'area principale di gioco
-    for (let i = 0; i < imgCat.length; i++) {
+    for (let i = 0; i < imgFlower.length; i++) {
 
         const dropZone = document.createElement('div');
         dropZone.classList.add('tiles-drag'); // creare la classe tiles-drag
