@@ -38,9 +38,9 @@ const imgFlower = [
 ]
 
 //individuare l'elemento corrispondente al pulsante di inizio gioco
-const action = document.getElementById('action')
+const play = document.getElementById('play')
 
-const boxButton = document.getElementById('box-btn');
+// const boxButton = document.getElementById('box-btn');
 //individuare il pulsante reset
 const reset = document.getElementById('reset');
 
@@ -51,8 +51,13 @@ const boardGame = document.getElementById('tiles-box');
 //all'avvio del gioco rimescola le tessere in ordine casuale
 const shuffledImages = shuffleArray(imgFlower)
 
+const selected = document.querySelector('.selected')
+
+const guide = document.getElementById('guide')
+
+
 //al click del pulsante inizia il gioco
-action.addEventListener('click', () =>{
+play.addEventListener('click', () =>{
 
     //iterare le tessere per inserirle nell'area per poter essere trascinate
     for (let i = 0; i < shuffledImages.length; i++) {
@@ -81,9 +86,14 @@ action.addEventListener('click', () =>{
         boardBox.appendChild(dropZone); // inserire tutti gli elementi nell'area di gioco
     }
 
-    action.style.display = 'none'
+    selected.style.display = 'none';
+
+    play.style.display = 'none';
+
+    guide.style.display = 'block';
 
     reset.style.display = 'block';
+
 
     //pulsante per iniziare una nuova partita
      reset.addEventListener('click', function () {
