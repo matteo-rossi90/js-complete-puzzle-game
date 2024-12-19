@@ -40,14 +40,15 @@ const imgFlower = [
 //individuare l'elemento corrispondente al pulsante di inizio gioco
 const play = document.getElementById('play')
 
-// const boxButton = document.getElementById('box-btn');
 //individuare il pulsante reset
 const reset = document.getElementById('reset');
 
 //individuare l'area in cui le tiles vengono trascinate le tessere
 const boardBox = document.getElementById('puzzle-board');
+
 //individuare l'area che ospita le tessere da trascinare
 const boardGame = document.getElementById('tiles-box');
+
 //all'avvio del gioco rimescola le tessere in ordine casuale
 const shuffledImages = shuffleArray(imgFlower)
 
@@ -55,50 +56,74 @@ const selected = document.querySelector('.selected')
 
 const guide = document.getElementById('guide')
 
+const box = document.getElementById('container-puzzle')
+
+const choice = document.getElementById('choice')
+
+const easy = document.getElementById('easy')
+
+const medium = document.getElementById('medium')
+
+const hard = document.getElementById('hard')
 
 //al click del pulsante inizia il gioco
 play.addEventListener('click', () =>{
 
-    //iterare le tessere per inserirle nell'area per poter essere trascinate
-    for (let i = 0; i < shuffledImages.length; i++) {
-
-        const tile = document.createElement('div'); // creare un elemento blocco
-        tile.classList.add('tiles'); //aggiungere la classe tiles nell'elemento blocco
-
-        const imgElement = document.createElement('img'); //inserire l'elemento img
-        imgElement.src = shuffledImages[i]; //inserire l'elemento src delle singole immagini
-        imgElement.draggable = true; //inserire nel markup l'attributo draggable
-        imgElement.id = `tile-${parseInt(shuffledImages[i].match(/\d+/)[0])}`; //inserire l'id della singola tessera
-        imgElement.addEventListener('dragstart', drag); //impostare la capacità di trascinare le tessere grazie alla funzione
-
-        tile.appendChild(imgElement); // integrare tutti gli elementi all'elemento blocco
-        boardGame.appendChild(tile); //integrare l'elemento blocco all'area di gioco dove si pescano le tessere
-    }
-
-    //iterare le tessere nell'area principale di gioco
-    for (let i = 0; i < imgFlower.length; i++) {
-
-        const dropZone = document.createElement('div');
-        dropZone.classList.add('tiles-drag'); // creare la classe tiles-drag
-        dropZone.addEventListener('dragover', allowDrop); //abilitare la capacità di effettuare il drop delle tessere
-        dropZone.addEventListener('drop', drop); //fare in modo che le tessere siano inserite nella griglia di gioco una volta trascinate
-
-        boardBox.appendChild(dropZone); // inserire tutti gli elementi nell'area di gioco
-    }
-
+    //nasconde il titolo
     selected.style.display = 'none';
 
+    //nasconde il tasto start
     play.style.display = 'none';
 
-    guide.style.display = 'block';
+    easy.style.display = 'inline-block';
 
-    reset.style.display = 'block';
+    medium.style.display = 'inline-block';
+
+    hard.style.display = 'inline-block';
+
+    choice.style.display = 'block'
+
+    easy.addEventListener('click', () =>{
+
+        choice.style.display = 'none'
+
+        easy.style.display = 'none';
+        medium.style.display = 'none';
+        hard.style.display = 'none';
+
+        //iterare le tessere per inserirle nell'area per poter essere trascinate
+        for (let i = 0; i < shuffledImages.length; i++) {
+
+            const tile = document.createElement('div'); // creare un elemento blocco
+            tile.classList.add('tiles'); //aggiungere la classe tiles nell'elemento blocco
+
+            const imgElement = document.createElement('img'); //inserire l'elemento img
+            imgElement.src = shuffledImages[i]; //inserire l'elemento src delle singole immagini
+            imgElement.draggable = true; //inserire nel markup l'attributo draggable
+            imgElement.id = `tile-${parseInt(shuffledImages[i].match(/\d+/)[0])}`; //inserire l'id della singola tessera
+            imgElement.addEventListener('dragstart', drag); //impostare la capacità di trascinare le tessere grazie alla funzione
+
+            tile.appendChild(imgElement); // integrare tutti gli elementi all'elemento blocco
+            boardGame.appendChild(tile); //integrare l'elemento blocco all'area di gioco dove si pescano le tessere
+        }
+
+        //iterare le tessere nell'area principale di gioco
+        for (let i = 0; i < imgFlower.length; i++) {
+
+            const dropZone = document.createElement('div');
+            dropZone.classList.add('tiles-drag'); // creare la classe tiles-drag
+            dropZone.addEventListener('dragover', allowDrop); //abilitare la capacità di effettuare il drop delle tessere
+            dropZone.addEventListener('drop', drop); //fare in modo che le tessere siano inserite nella griglia di gioco una volta trascinate
+
+            boardBox.appendChild(dropZone); // inserire tutti gli elementi nell'area di gioco
+        }
+
+        //mostra la scritta in alto
+        guide.style.display = 'block';
+
+    })
 
 
-    //pulsante per iniziare una nuova partita
-     reset.addEventListener('click', function () {
-        location.reload();
-    });
 
 })
 

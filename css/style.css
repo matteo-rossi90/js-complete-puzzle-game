@@ -14,6 +14,12 @@
     --color-start-clicked: rgb(32, 104, 30);
     --color-reset: tomato;
     --color-reset-clicked: rgb(185, 71, 51);
+    --color-easy: rgb(20, 215, 20);
+    --color-easy-clicked: green;
+    --color-medium: orange;
+    --color-medium-clicked: rgb(202, 136, 14);
+    --color-hard: rgba(255, 0, 0, 0.833);
+    --color-hard-clicked: rgba(159, 4, 4, 0.833);
 }
 
 body{
@@ -35,11 +41,19 @@ body{
     padding-bottom: 1.5rem;
 }
 
+#choice{
+    display: none;
+    color: var(--color-white);
+    font-size: 18px;
+    padding-bottom: 3rem;
+}
+
 .box-btn{
     display: flex;
     justify-content: center;
     width: 100%;
     padding-bottom: 1.5rem;
+    gap: 3rem;
 }
 
 #reset{
@@ -68,15 +82,63 @@ body{
     transform: translateY(4px);
 }
 
-.btn{
-    display: inline-block;
-    padding: 15px 25px;
+.btn,
+.btn-mode{
     border-radius: 15px;
     color: var(--color-white);
     font-size: 20px;
     cursor: pointer;
     outline: none;
     border: none;
+    text-align: center;
+}
+
+.btn{
+    padding: 15px 25px;
+}
+
+.btn-mode{
+    padding: 1.5rem 3rem;
+    width: 100%;
+}
+
+#easy,
+#medium,
+#hard {
+    display: none;
+}
+
+#easy {
+    background-color: var(--color-easy);
+    box-shadow: 0 8px var(--color-easy-clicked);
+}
+
+#easy:active {
+    background-color: var(--color-easy-clicked);
+    box-shadow: 0 5px var(--color-white);
+    transform: translateY(4px);
+}
+
+#medium {
+    background-color: var(--color-medium);
+    box-shadow: 0 8px var(--color-medium-clicked);
+}
+
+#medium:active {
+    background-color: var(--color-medium-clicked);
+    box-shadow: 0 5px var(--color-white);
+    transform: translateY(4px);
+}
+
+#hard {
+    background-color: var(--color-hard);
+    box-shadow: 0 8px var(--color-hard-clicked);
+}
+
+#hard:active {
+    background-color: var(--color-hard-clicked);
+    box-shadow: 0 5px var(--color-white);
+    transform: translateY(4px);
 }
 
 /* .btn:hover{ */
@@ -109,10 +171,6 @@ body{
 
 #puzzle-box{
     padding: 2.5rem 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
 }
 
 #puzzle-board{
@@ -168,6 +226,13 @@ img{
 
 .show{
     display: block;
+}
+
+#container-puzzle{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
 @keyframes fadeIn {

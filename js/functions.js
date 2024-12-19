@@ -43,7 +43,14 @@ function drop(event) {
 
                 message.style.display = 'block';
                 message.innerHTML = 'Game over!' //mostra il messaggio se le tessere sono nella posizione sbagliata
+
             }
+
+            reset.style.display = 'block'; //compare il pulsante per iniziare una nuova partita
+
+            reset.addEventListener('click', function () {//pulsante per iniziare una nuova partita
+                location.reload();
+            });
 
         }
     }
