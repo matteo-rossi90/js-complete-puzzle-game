@@ -10,6 +10,10 @@
     --color-white: white;
     --color-dark-bg : rgb(48, 48, 48);
     --color-dark-grey: rgb(63, 63, 63);
+    --color-start: rgb(39, 132, 35);
+    --color-start-clicked: rgb(32, 104, 30);
+    --color-reset: tomato;
+    --color-reset-clicked: rgb(185, 71, 51);
 }
 
 body{
@@ -42,19 +46,43 @@ body{
     display: none;
 }
 
-.btn{
-    padding: 8px 16px;
-    border-radius: 50px;
-    border: 1px solid var(--color-white);
-    background-color:transparent;
-    color: var(--color-white);
-    cursor: pointer;
+.btn-start{
+    background-color: var(--color-start);
+    box-shadow: 0 8px var(--color-start-clicked);
 }
 
-.btn:hover{
-    background-color: var(--color-white);
-    color: var(--color-dark-bg);
+.btn-start:active{
+    background-color: var(--color-start-clicked);
+    box-shadow: 0 5px var(--color-white);
+    transform: translateY(4px);
 }
+
+.btn-reset{
+    background-color: var(--color-reset);
+    box-shadow: 0 9px var(--color-reset-clicked);
+}
+
+.btn-reset:active{
+    background-color: var(--color-reset-clicked);
+    box-shadow: 0 5px var(--color-white);
+    transform: translateY(4px);
+}
+
+.btn{
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 15px;
+    color: var(--color-white);
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+/* .btn:hover{ */
+    /* background-color: var(--color-white); */
+    /* color: var(--color-dark-bg); */
+/* } */
 
 #guide{
     display: none;
@@ -66,6 +94,7 @@ body{
     text-align: left;
     margin: 0 auto;
     width: 90%;
+    font-size: 18px;
 }
 
 #container{
