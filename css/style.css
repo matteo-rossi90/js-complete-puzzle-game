@@ -25,9 +25,12 @@
 body{
     background-image: url('../img/image_bg3.webp');
     background-size:cover;
+    color: var(--color-white)
 }
 
-#top-board{
+#top-board,
+#choice-image{
+    width: 80%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -35,7 +38,6 @@ body{
 }
 
 #title{
-    color: var(--color-white);
     font-weight: 600;
     font-size: 4rem;
     padding-bottom: 1.5rem;
@@ -43,7 +45,6 @@ body{
 
 #choice{
     display: none;
-    color: var(--color-white);
     font-size: 18px;
     padding-bottom: 3rem;
 }
@@ -85,12 +86,12 @@ body{
 .btn,
 .btn-mode{
     border-radius: 15px;
-    color: var(--color-white);
     font-size: 20px;
     cursor: pointer;
     outline: none;
     border: none;
     text-align: center;
+    color: var(--color-white)
 }
 
 .btn{
@@ -148,7 +149,6 @@ body{
 
 #guide{
     display: none;
-    color: var(--color-white);
     padding-bottom: 1.5rem;
 }
 
@@ -214,7 +214,6 @@ img{
     top: 50%;
     left: 50%;
     background-color: rgba(0, 0, 0, 0.8);
-    color: var(--color-white);
     padding: 20px;
     border-radius: 10px;
     font-size: 2rem;
@@ -233,6 +232,28 @@ img{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+}
+
+#wrap-image{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card-img{
+    width: calc(100% / 3);
+}
+
+.card-img img{
+    border-radius: 15px;
+    object-fit: cover;
+    cursor:pointer;
+}
+
+#text-img{
+    display: none;
+    font-size: 18px;
+    padding-bottom: 1.5rem;
 }
 
 @keyframes fadeIn {

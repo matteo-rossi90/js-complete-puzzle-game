@@ -16,40 +16,70 @@
     <main>
         <div id="container">
 
-            <header id="top-board">
+            <!-- preparativi del gioco -->
+            <section id="top-board">
+
+                <!-- titolo gioco -->
                 <div id="title" class="selected">Puzzle Game</div>
+
+                <!-- pulsante per iniziare il gioco -->
                 <div class="box-btn">
                     <button id="play" class="btn btn-start">Inizia</button>
                 </div>
 
+                <!-- testo che illustra il livello di difficoltà -->
                 <p id="choice">
                     Scegli un livello di difficoltà e clicca il pulsante corrispondente per andare avanti
                 </p>
+
+                <!-- livelli di difficoltà -->
                 <div class="box-btn">
                     <button class="btn-mode" id="easy">Facile</button>
                     <button class="btn-mode" id="medium">Medio</button>
                     <button class="btn-mode" id="hard">Difficile</button>
                 </div>
-                
-            </header>
 
-            <div id="puzzle-box">
+                
+            </section>
+
+            <!-- scegli l'immagine -->
+            <section id="choice-image">
+                <p id="text-img">Scegli l'immagine che vuoi realizzare</p>
+                <div id="wrap-image">
+                    <div class="card-img" id="flower">
+                        <img src="./img/img_flower/daisy.jpg" alt="daisy">
+                    </div>
+                </div>
+            </section>
+
+            <!-- inizio del gioco -->
+            <section id="puzzle-box">
+
+                <!-- istruzioni per il gioco -->
                  <div id="guide">
                     <p>
                         Trascina le tessere che hai a disposizione e rilasciale
                         nell'ordine corretto. Premendo il pulsante Riavvia puoi ricominciare il gioco.
                     </p>
                  </div>
+
+                 <!-- contenitore dell'area di gioco -->
                 <div id="container-puzzle">
+
+                    <!-- area dove le tessere devono essere ricomposte -->
                     <box id="puzzle-board">
                     </box>
+
+                    <!-- area dove le tessere sono disposte casualmente -->
                     <box id="tiles-box">
                     </box>
+
+                    <!-- pulsante per ricominciare il gioco -->
                     <div class="box-btn">
-                        <button id="reset" class="btn btn-reset">Riavvia</button>
+                        <button id="reset" class="btn btn-reset">Nuova partita</button>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <div id="message"></div>
 
