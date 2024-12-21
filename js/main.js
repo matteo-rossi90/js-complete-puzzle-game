@@ -67,10 +67,10 @@ const imagesMap = {
 };
 
 // Mappa pulsanti difficoltà
-const difficultyButtons = {
+const levels = {
     easy,
-    // medium,
-    // hard,
+    medium,
+    hard,
 };
 
 //al click del pulsante inizia il gioco
@@ -86,19 +86,27 @@ play.addEventListener('click', () =>{
     choice.style.display = 'block'
 
     // mostra pulsanti di difficoltà
-    Object.values(difficultyButtons).forEach((button) => (button.style.display = 'inline-block'));
+    Object.values(levels).forEach((button) => (button.style.display = 'inline-block'));
     choice.style.display = 'block';
 
-    // gestione difficoltà
-    Object.values(difficultyButtons).forEach((button) => {
+    // genera i livelli di difficoltà
+    Object.values(levels).forEach((button) => {
+
+        //abilità tutti i livelli di difficoltà
         button.addEventListener('click', () => {
             choice.style.display = 'none';
-            Object.values(difficultyButtons).forEach((btn) => (btn.style.display = 'none'));
+            Object.values(levels).forEach((btn) => (btn.style.display = 'none'));
 
             // mostra opzioni di immagini
-            flower.style.display = 'flex';
-            cat.style.display = 'flex';
-            landscape.style.display = 'flex';
+            if(button === easy){ // se si sceglie la modalità facile
+                
+                //immagini della modailità facile
+                flower.style.display = 'flex';
+                cat.style.display = 'flex';
+                landscape.style.display = 'flex';
+            }
+
+            //mostra il testo sopra le tre immagini
             textImg.style.display = 'block';
         });
     });

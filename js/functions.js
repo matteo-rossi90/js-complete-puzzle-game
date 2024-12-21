@@ -112,8 +112,8 @@ function setupGame(imagesArray) {
     landscape.style.display = 'none';
     textImg.style.display = 'none';
 
-    boardGame.innerHTML = ''; // Svuota l'area di gioco
-    boardBox.innerHTML = ''; // Svuota l'area delle drop zones
+    boardGame.innerHTML = ''; // svuota l'area di gioco
+    boardBox.innerHTML = ''; // svuota l'area delle drop zones
 
     createTiles(imagesArray);
     createDropZones(imagesArray.length);
