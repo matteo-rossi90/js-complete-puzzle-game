@@ -36,3 +36,22 @@ const imgFlower = [
     './img/easy/img_flower/15.jpg',
     './img/easy/img_flower/16.jpg',
 ]
+
+const imgLandscape = [
+    './img/easy/img_landscape/1.jpg',
+    './img/easy/img_landscape/2.jpg',
+    './img/easy/img_landscape/3.jpg',
+    './img/easy/img_landscape/4.jpg',
+    './img/easy/img_landscape/5.jpg',
+    './img/easy/img_landscape/6.jpg',
+    './img/easy/img_landscape/7.jpg',
+    './img/easy/img_landscape/8.jpg',
+    './img/easy/img_landscape/9.jpg',
+    './img/easy/img_landscape/10.jpg',
+    './img/easy/img_landscape/11.jpg',
+    './img/easy/img_landscape/12.jpg',
+    './img/easy/img_landscape/13.jpg',
+    './img/easy/img_landscape/14.jpg',
+    './img/easy/img_landscape/15.jpg',
+    './img/easy/img_landscape/16.jpg',
+]

@@ -76,3 +76,49 @@ function isBoardFull() {
     }
     return true;
 }
+
+//genera le tessere da trascinare
+function createTiles(imagesArray) {
+    for (let i = 0; i < imagesArray.length; i++) {
+        const tile = document.createElement('div'); // creare un elemento blocco
+        tile.classList.add('tiles'); //aggiungere la classe tiles nell'elemento blocco
+        const imgElement = document.createElement('img'); //inserire l'elemento img
+        imgElement.src = imagesArray[i]; //inserire l'elemento src delle singole immagini
+        imgElement.draggable = true; //inserire nel markup l'attributo draggable
+        imgElement.id = `tile-${parseInt(imagesArray[i].match(/\d+/)[0])}`; //inserire l'id della singola tessera
+        imgElement.addEventListener('dragstart', drag); //impostare la capacità di trascinare le tessere grazie alla funzione
+        tile.appendChild(imgElement); // integrare tutti gli elementi all'elemento blocco
+        boardGame.appendChild(tile); //integrare l'elemento blocco all'area di gioco dove si pescano le tessere
+    }
+
+}
+
+//genera le tessere che devono essere rilasciate nella'rea di gioco
+function createDropZones(count) {
+    for (let i = 0; i < count; i++) {
+        const dropZone = document.createElement('div');
+        dropZone.classList.add('tiles-drag');
+        dropZone.addEventListener('dragover', allowDrop);
+        dropZone.addEventListener('drop', drop);
+
+        boardBox.appendChild(dropZone);
+    }
+}
+
+//gestisce la creazione delle tessere e l'assegnazione del drag e drop
+function setupGame(imagesArray) {
+    flower.style.display = 'none';
+    cat.style.display = 'none';
+    landscape.style.display = 'none';
+    textImg.style.display = 'none';
+
+    boardGame.innerHTML = ''; // Svuota l'area di gioco
+    boardBox.innerHTML = ''; // Svuota l'area delle drop zones
+
+    createTiles(imagesArray);
+    createDropZones(imagesArray.length);
+
+    guide.style.display = 'block';
+}
+
+

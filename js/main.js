@@ -17,6 +17,8 @@ const shuffleFlower = shuffleArray(imgFlower)
 
 const shuffleCat = shuffleArray(imgCat)
 
+const shuffleLandscape = shuffleArray(imgLandscape)
+
 //
 const selected = document.querySelector('.selected')
 
@@ -43,13 +45,33 @@ const imageChoice = document.getElementById('wrap-image')
 //immagine fiore
 const flower = document.getElementById('flower')
 
+//immagine gatto
 const cat = document.getElementById('cat')
+
+//immagine paesaggio
+const landscape = document.getElementById('landscape')
 
 const textImg = document.getElementById('text-img')
 
 flower.style.display = 'none';
 
 cat.style.display = 'none';
+
+landscape.style.display = 'none';
+
+//immagini
+const imagesMap = {
+    flower: shuffleFlower,
+    cat: shuffleCat,
+    landscape: shuffleLandscape,
+};
+
+// Mappa pulsanti difficoltà
+const difficultyButtons = {
+    easy,
+    // medium,
+    // hard,
+};
 
 //al click del pulsante inizia il gioco
 play.addEventListener('click', () =>{
@@ -60,113 +82,41 @@ play.addEventListener('click', () =>{
     //nasconde il tasto start
     play.style.display = 'none';
 
-    //mostra i tre livelli di difficoltà
-    easy.style.display = 'inline-block';
-
-    medium.style.display = 'inline-block';
-
-    hard.style.display = 'inline-block';
-
     //mostra il testo sopra i tre livelli di difficoltà
     choice.style.display = 'block'
 
-    //attiva la modalità facile
-    easy.addEventListener('click', () => {
+    // mostra pulsanti di difficoltà
+    Object.values(difficultyButtons).forEach((button) => (button.style.display = 'inline-block'));
+    choice.style.display = 'block';
 
-        choice.style.display = 'none'
+    // gestione difficoltà
+    Object.values(difficultyButtons).forEach((button) => {
+        button.addEventListener('click', () => {
+            choice.style.display = 'none';
+            Object.values(difficultyButtons).forEach((btn) => (btn.style.display = 'none'));
 
-        easy.style.display = 'none';
-        medium.style.display = 'none';
-        hard.style.display = 'none';
+            // mostra opzioni di immagini
+            flower.style.display = 'flex';
+            cat.style.display = 'flex';
+            landscape.style.display = 'flex';
+            textImg.style.display = 'block';
+        });
+    });
 
-        flower.style.display = 'flex'
-
-        cat.style.display = 'flex'
-
-        textImg.style.display = 'block'
-
-        flower.addEventListener('click', () =>{
-
-            flower.style.display = 'none'
-
-            cat.style.display = 'none'
-
-            textImg.style.display = 'none'
-
-            //iterare le tessere per inserirle nell'area per poter essere trascinate
-            for (let i = 0; i < shuffleFlower.length; i++) {
-
-                const tile = document.createElement('div'); // creare un elemento blocco
-                tile.classList.add('tiles'); //aggiungere la classe tiles nell'elemento blocco
-
-                const imgElement = document.createElement('img'); //inserire l'elemento img
-                imgElement.src = shuffleFlower[i]; //inserire l'elemento src delle singole immagini
-                imgElement.draggable = true; //inserire nel markup l'attributo draggable
-                imgElement.id = `tile-${parseInt(shuffleFlower[i].match(/\d+/)[0])}`; //inserire l'id della singola tessera
-                imgElement.addEventListener('dragstart', drag); //impostare la capacità di trascinare le tessere grazie alla funzione
-
-                tile.appendChild(imgElement); // integrare tutti gli elementi all'elemento blocco
-                boardGame.appendChild(tile); //integrare l'elemento blocco all'area di gioco dove si pescano le tessere
-            }
-
-            //iterare le tessere nell'area principale di gioco
-            for (let i = 0; i < imgFlower.length; i++) {
-
-                const dropZone = document.createElement('div');
-                dropZone.classList.add('tiles-drag'); // creare la classe tiles-drag
-                dropZone.addEventListener('dragover', allowDrop); //abilitare la capacità di effettuare il drop delle tessere
-                dropZone.addEventListener('drop', drop); //fare in modo che le tessere siano inserite nella griglia di gioco una volta trascinate
-
-                boardBox.appendChild(dropZone); // inserire tutti gli elementi nell'area di gioco
-            }
-
-            //mostra la scritta in alto
-            guide.style.display = 'block';
-
-        })
-
-        cat.addEventListener('click', () => {
-
-            flower.style.display = 'none'
-
-            cat.style.display = 'none'
-
-            textImg.style.display = 'none'
-
-            //iterare le tessere per inserirle nell'area per poter essere trascinate
-            for (let i = 0; i < shuffleCat.length; i++) {
-                
-                const tile = document.createElement('div'); // creare un elemento blocco
-                tile.classList.add('tiles'); //aggiungere la classe tiles nell'elemento blocco
-                const imgElement = document.createElement('img'); //inserire l'elemento img
-                imgElement.src = shuffleCat[i]; //inserire l'elemento src delle singole immagini
-                imgElement.draggable = true; //inserire nel markup l'attributo draggable
-                imgElement.id = `tile-${parseInt(shuffleCat[i].match(/\d+/)[0])}`; //inserire l'id della singola tessera
-                imgElement.addEventListener('dragstart', drag); //impostare la capacità di trascinare le tessere grazie alla funzione
-                tile.appendChild(imgElement); // integrare tutti gli elementi all'elemento blocco
-                boardGame.appendChild(tile); //integrare l'elemento blocco all'area di gioco dove si pescano le tessere
-            }
-
-            //iterare le tessere nell'area principale di gioco
-            for (let i = 0; i < imgCat.length; i++) {
-
-                const dropZone = document.createElement('div');
-                dropZone.classList.add('tiles-drag'); // creare la classe tiles-drag
-                dropZone.addEventListener('dragover', allowDrop); //abilitare la capacità di effettuare il drop delle tessere
-                dropZone.addEventListener('drop', drop); //fare in modo che le tessere siano inserite nella griglia di gioco una volta tras
-                boardBox.appendChild(dropZone); // inserire tutti gli elementi nell'area di gioco
-            }
-
-            //mostra la scritta in alto
-            guide.style.display = 'block';
-        })
+    // assegna gli eventi alle immagini
+    Object.keys(imagesMap).forEach((key) => {
+        const element = document.getElementById(key);
+        element.addEventListener('click', () => setupGame(imagesMap[key]));
+    });
 
 
-    })
+});
 
 
 
-})
+
+
+
 
 
 
