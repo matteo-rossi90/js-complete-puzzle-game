@@ -136,7 +136,7 @@ function startTimer(duration, display) {
         display.innerHTML = minutes + ":" + seconds;
 
         if (--timer < 0) {
-            timer = 0
+            clearInterval(interval)
             countDown.style.display = 'none';
             message.style.display = 'block';
             message.innerHTML = 'Game over!';

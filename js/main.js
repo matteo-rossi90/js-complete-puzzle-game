@@ -167,7 +167,7 @@ play.addEventListener('click', () =>{
                     setupGame(imagesMap[key])
 
                     //se si attiva qualsiasi immagine di difficoltà media
-                    if(levels.medium){
+                    if (button === medium) {
 
                         //imposta il contatore
                         countDown.style.display = 'flex'
@@ -179,7 +179,6 @@ play.addEventListener('click', () =>{
                         let fiftyMinutes = 60 * 15,
                             display = countDown;
                         startTimer(fiftyMinutes, display);
-                        
                     }
                 });
 
