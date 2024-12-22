@@ -276,6 +276,12 @@ img{
     text-align: center;
 }
 
+#time{
+    display: none;
+    padding: 1rem 0;
+    font-size: 25px;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

@@ -80,6 +80,10 @@ wolf.style.display = 'none';
 
 village.style.display = 'none';
 
+const message = document.getElementById('message')
+
+let countDown = document.querySelector('#time')
+
 //immagini complete
 const imagesMap = {
     flower: shuffleFlower,
@@ -148,6 +152,7 @@ play.addEventListener('click', () =>{
                 wolf.style.display = 'flex';
 
                 village.style.display = 'flex';
+
             }
 
             //mostra il testo sopra le tre immagini
@@ -156,7 +161,25 @@ play.addEventListener('click', () =>{
             // assegna gli eventi alle immagini
             Object.keys(imagesMap).forEach((key) => {
                 const element = document.getElementById(key);
-                element.addEventListener('click', () => setupGame(imagesMap[key]));
+                element.addEventListener('click', () => {
+
+                    //dispone le tessere
+                    setupGame(imagesMap[key])
+
+                    //se si attiva qualsiasi immagine di difficoltà media
+                    if(levels.medium){
+
+                        //imposta il contatore
+                        countDown.style.display = 'flex'
+                        
+                        //fai partire il countdown che dura 10 minuti
+                        let tenMinutes = 60 * 2,
+                            display = countDown;
+                        startTimer(tenMinutes, display);
+                        
+                    }
+                });
+
             });
         });
     });

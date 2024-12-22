@@ -35,12 +35,10 @@ function drop(event) {
 
             //controlla se tutte le tessere sono nella posizione corretta
             if (checkWin()) {
-                const message = document.getElementById('message')
                 message.style.display = 'block';
-                message.innerHTML = 'Congratulazioni, hai vinto!' //mostra il messaggio se le tessere sono nella posizione giusta
+                message.innerHTML = 'Hai vinto!' //mostra il messaggio se le tessere sono nella posizione giusta
             } else {
-                const message = document.getElementById('message')
-
+                countDown.style.display = 'none'; //nascondi il countdown
                 message.style.display = 'block';
                 message.innerHTML = 'Game over!' //mostra il messaggio se le tessere sono nella posizione sbagliata
 
@@ -122,6 +120,32 @@ function setupGame(imagesArray) {
     createDropZones(imagesArray.length);
 
     guide.style.display = 'block';
+}
+
+//genera un timer
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    var interval = setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.innerHTML = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = 0
+            countDown.style.display = 'none';
+            message.style.display = 'block';
+            message.innerHTML = 'Game over!';
+
+            reset.style.display = 'block'; //compare il pulsante per iniziare una nuova partita
+            reset.addEventListener('click', function () {//pulsante per iniziare una nuova partita
+                location.reload();
+            });
+        }
+    }, 1000);
 }
 
 
