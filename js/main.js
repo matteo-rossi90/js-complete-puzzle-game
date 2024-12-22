@@ -171,11 +171,14 @@ play.addEventListener('click', () =>{
 
                         //imposta il contatore
                         countDown.style.display = 'flex'
+
+                        //imposta il contenuto del timer a 20 minuti
+                        countDown.textContent = '15:00'
                         
                         //fai partire il countdown che dura 10 minuti
-                        let tenMinutes = 60 * 2,
+                        let fiftyMinutes = 60 * 15,
                             display = countDown;
-                        startTimer(tenMinutes, display);
+                        startTimer(fiftyMinutes, display);
                         
                     }
                 });

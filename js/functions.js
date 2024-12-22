@@ -35,6 +35,7 @@ function drop(event) {
 
             //controlla se tutte le tessere sono nella posizione corretta
             if (checkWin()) {
+                countDown.style.display = 'none'; //nascondi il countdown
                 message.style.display = 'block';
                 message.innerHTML = 'Hai vinto!' //mostra il messaggio se le tessere sono nella posizione giusta
             } else {
