@@ -19,7 +19,12 @@ const shuffleCat = shuffleArray(imgCat)
 
 const shuffleLandscape = shuffleArray(imgLandscape)
 
-//
+const shuffleAirbaloon = shuffleArray(imgAirbaloon)
+
+const shuffleWolf = shuffleArray(imgWolf)
+
+const shuffleVillage = shuffleArray(imgVillage)
+
 const selected = document.querySelector('.selected')
 
 //istruzioni del gioco
@@ -51,6 +56,12 @@ const cat = document.getElementById('cat')
 //immagine paesaggio
 const landscape = document.getElementById('landscape')
 
+const airbaloon = document.getElementById('airbaloon')
+
+const wolf = document.getElementById('wolf')
+
+const village = document.getElementById('village')
+
 //testo sopra le immagini da scegliere
 const textImg = document.getElementById('text-img')
 
@@ -63,11 +74,20 @@ cat.style.display = 'none';
 
 landscape.style.display = 'none';
 
-//immagini modalità semplice
+airbaloon.style.display = 'none';
+
+wolf.style.display = 'none';
+
+village.style.display = 'none';
+
+//immagini complete
 const imagesMap = {
     flower: shuffleFlower,
     cat: shuffleCat,
     landscape: shuffleLandscape,
+    airbaloon: shuffleAirbaloon,
+    wolf: shuffleWolf,
+    village: shuffleVillage
 };
 
 // pulsanti difficoltà
@@ -115,22 +135,32 @@ play.addEventListener('click', () =>{
             // mostra opzioni di immagini
             if(button === easy){ // se si sceglie la modalità facile
                 
-                //immagini della modailità facile
+                //immagini della modalità facile
                 flower.style.display = 'flex';
                 cat.style.display = 'flex';
                 landscape.style.display = 'flex';
+
+            }else if(button === medium){
+
+                //immagini della modalità media
+                airbaloon.style.display = 'flex';
+
+                wolf.style.display = 'flex';
+
+                village.style.display = 'flex';
             }
 
             //mostra il testo sopra le tre immagini
             textImg.style.display = 'block';
+
+            // assegna gli eventi alle immagini
+            Object.keys(imagesMap).forEach((key) => {
+                const element = document.getElementById(key);
+                element.addEventListener('click', () => setupGame(imagesMap[key]));
+            });
         });
     });
 
-    // assegna gli eventi alle immagini
-    Object.keys(imagesMap).forEach((key) => {
-        const element = document.getElementById(key);
-        element.addEventListener('click', () => setupGame(imagesMap[key]));
-    });
 
 
 });

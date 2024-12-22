@@ -1,4 +1,4 @@
-
+//imagini modalità facile
 const imgCat = [
     './img/easy/img_cat/1.jpg',
     './img/easy/img_cat/2.jpg',
@@ -54,4 +54,62 @@ const imgLandscape = [
     './img/easy/img_landscape/14.jpg',
     './img/easy/img_landscape/15.jpg',
     './img/easy/img_landscape/16.jpg',
+]
+
+//immagini modalità difficile
+const imgAirbaloon = [
+    './img/medium/img_airbaloon/1.jpg',
+    './img/medium/img_airbaloon/2.jpg',
+    './img/medium/img_airbaloon/3.jpg',
+    './img/medium/img_airbaloon/4.jpg',
+    './img/medium/img_airbaloon/5.jpg',
+    './img/medium/img_airbaloon/6.jpg',
+    './img/medium/img_airbaloon/7.jpg',
+    './img/medium/img_airbaloon/8.jpg',
+    './img/medium/img_airbaloon/9.jpg',
+    './img/medium/img_airbaloon/10.jpg',
+    './img/medium/img_airbaloon/11.jpg',
+    './img/medium/img_airbaloon/12.jpg',
+    './img/medium/img_airbaloon/13.jpg',
+    './img/medium/img_airbaloon/14.jpg',
+    './img/medium/img_airbaloon/15.jpg',
+    './img/medium/img_airbaloon/16.jpg',
+];
+
+const imgWolf = [
+    './img/medium/img_wolf/1.jpg',
+    './img/medium/img_wolf/2.jpg',
+    './img/medium/img_wolf/3.jpg',
+    './img/medium/img_wolf/4.jpg',
+    './img/medium/img_wolf/5.jpg',
+    './img/medium/img_wolf/6.jpg',
+    './img/medium/img_wolf/7.jpg',
+    './img/medium/img_wolf/8.jpg',
+    './img/medium/img_wolf/9.jpg',
+    './img/medium/img_wolf/10.jpg',
+    './img/medium/img_wolf/11.jpg',
+    './img/medium/img_wolf/12.jpg',
+    './img/medium/img_wolf/13.jpg',
+    './img/medium/img_wolf/14.jpg',
+    './img/medium/img_wolf/15.jpg',
+    './img/medium/img_wolf/16.jpg',
+]
+
+const imgVillage = [
+    './img/medium/img_village/1.jpg',
+    './img/medium/img_village/2.jpg',
+    './img/medium/img_village/3.jpg',
+    './img/medium/img_village/4.jpg',
+    './img/medium/img_village/5.jpg',
+    './img/medium/img_village/6.jpg',
+    './img/medium/img_village/7.jpg',
+    './img/medium/img_village/8.jpg',
+    './img/medium/img_village/9.jpg',
+    './img/medium/img_village/10.jpg',
+    './img/medium/img_village/11.jpg',
+    './img/medium/img_village/12.jpg',
+    './img/medium/img_village/13.jpg',
+    './img/medium/img_village/14.jpg',
+    './img/medium/img_village/15.jpg',
+    './img/medium/img_village/16.jpg',
 ]

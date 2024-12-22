@@ -110,6 +110,9 @@ function setupGame(imagesArray) {
     flower.style.display = 'none';
     cat.style.display = 'none';
     landscape.style.display = 'none';
+    village.style.display = 'none';
+    wolf.style.display = 'none';
+    airbaloon.style.display = 'none';
     textImg.style.display = 'none';
 
     boardGame.innerHTML = ''; // svuota l'area di gioco
