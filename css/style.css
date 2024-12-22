@@ -3,15 +3,14 @@
     box-sizing:border-box;
     padding: 0;
     margin: 0;
-    text-align: center
 }
 
 :root{
     --color-white: white;
     --color-dark-bg : rgb(48, 48, 48);
     --color-dark-grey: rgb(63, 63, 63);
-    --color-start: rgb(39, 132, 35);
-    --color-start-clicked: rgb(32, 104, 30);
+    --color-start: rgb(51, 92, 188);
+    --color-start-clicked: rgb(31, 56, 114);
     --color-reset: tomato;
     --color-reset-clicked: rgb(185, 71, 51);
     --color-easy: rgb(20, 215, 20);
@@ -41,12 +40,14 @@ body{
     font-weight: 600;
     font-size: 4rem;
     padding-bottom: 1.5rem;
+    text-align:center;
 }
 
 #choice{
     display: none;
     font-size: 18px;
     padding-bottom: 3rem;
+    font-size: 25px;
 }
 
 .box-btn{
@@ -91,7 +92,9 @@ body{
     outline: none;
     border: none;
     text-align: center;
-    color: var(--color-white)
+    color: var(--color-white);
+    font-size: 25px;
+    
 }
 
 .btn{
@@ -142,6 +145,21 @@ body{
     transform: translateY(4px);
 }
 
+#level-description{
+    display:none;
+    justify-content: space-between;
+    gap: 4rem;
+    font-size: 21px;
+}
+
+.card-desc > ul{
+    padding-left: 1rem;
+}
+
+.card-desc{
+    width: calc(100% / 3)
+}
+
 /* .btn:hover{ */
     /* background-color: var(--color-white); */
     /* color: var(--color-dark-bg); */
@@ -156,7 +174,7 @@ body{
     text-align: left;
     margin: 0 auto;
     width: 90%;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 #container{
@@ -216,7 +234,7 @@ img{
     background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 10px;
-    font-size: 2rem;
+    font-size: 4rem;
     text-align: center;
     z-index: 1000;
     transform: translate(-50%, -50%);
@@ -254,6 +272,8 @@ img{
     display: none;
     font-size: 18px;
     padding-bottom: 1.5rem;
+    font-size: 25px;
+    text-align: center;
 }
 
 @keyframes fadeIn {

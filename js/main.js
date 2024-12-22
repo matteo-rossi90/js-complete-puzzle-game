@@ -51,7 +51,11 @@ const cat = document.getElementById('cat')
 //immagine paesaggio
 const landscape = document.getElementById('landscape')
 
+//testo sopra le immagini da scegliere
 const textImg = document.getElementById('text-img')
+
+//testi che descrivono i livelli di difficoltà
+const description = document.getElementById('level-description')
 
 flower.style.display = 'none';
 
@@ -59,14 +63,14 @@ cat.style.display = 'none';
 
 landscape.style.display = 'none';
 
-//immagini
+//immagini modalità semplice
 const imagesMap = {
     flower: shuffleFlower,
     cat: shuffleCat,
     landscape: shuffleLandscape,
 };
 
-// Mappa pulsanti difficoltà
+// pulsanti difficoltà
 const levels = {
     easy,
     medium,
@@ -87,14 +91,25 @@ play.addEventListener('click', () =>{
 
     // mostra pulsanti di difficoltà
     Object.values(levels).forEach((button) => (button.style.display = 'inline-block'));
+
+    //testo che appare sopra i tre pulsanti
     choice.style.display = 'block';
+
+    //visualizza la descrizione dei livelli di difficoltà
+    description.style.display = 'flex';
 
     // genera i livelli di difficoltà
     Object.values(levels).forEach((button) => {
 
         //abilità tutti i livelli di difficoltà
         button.addEventListener('click', () => {
+
+            //nascondi il testo che appare sopra i tre pulsanti
             choice.style.display = 'none';
+
+            //nascondi descrizioni
+            description.style.display = 'none';
+
             Object.values(levels).forEach((btn) => (btn.style.display = 'none'));
 
             // mostra opzioni di immagini
