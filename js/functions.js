@@ -81,6 +81,7 @@ function createTiles(imagesArray) {
     for (let i = 0; i < imagesArray.length; i++) {
         const tile = document.createElement('div'); // creare un elemento blocco
         tile.classList.add('tiles'); //aggiungere la classe tiles nell'elemento blocco
+
         const imgElement = document.createElement('img'); //inserire l'elemento img
         imgElement.src = imagesArray[i]; //inserire l'elemento src delle singole immagini
         imgElement.draggable = true; //inserire nel markup l'attributo draggable
@@ -93,32 +94,44 @@ function createTiles(imagesArray) {
 }
 
 //genera le tessere che devono essere rilasciate nella'rea di gioco
-function createDropZones(count) {
+function createDropZones(count, length) {
     for (let i = 0; i < count; i++) {
         const dropZone = document.createElement('div');
         dropZone.classList.add('tiles-drag');
         dropZone.addEventListener('dragover', allowDrop);
         dropZone.addEventListener('drop', drop);
 
+        let dimensionClass = '';
+        if (length === 'large') {
+            dimensionClass = 'dimension-large'
+
+        } else if (length === 'small') {
+            dimensionClass = 'dimension-small';
+        }
+
+        dropZone.classList.add(dimensionClass);
         boardBox.appendChild(dropZone);
+
     }
 }
 
 //gestisce la creazione delle tessere e l'assegnazione del drag e drop
-function setupGame(imagesArray) {
+function setupGame(imagesArray, length) {
     flower.style.display = 'none';
     cat.style.display = 'none';
     landscape.style.display = 'none';
     village.style.display = 'none';
     wolf.style.display = 'none';
     airbaloon.style.display = 'none';
+    // flowerHard.style.display = 'none';
+    
     textImg.style.display = 'none';
 
     boardGame.innerHTML = ''; // svuota l'area di gioco
     boardBox.innerHTML = ''; // svuota l'area delle drop zones
 
     createTiles(imagesArray);
-    createDropZones(imagesArray.length);
+    createDropZones(imagesArray.length, length);
 
     guide.style.display = 'block';
 }

@@ -12,19 +12,6 @@ const boardBox = document.getElementById('puzzle-board');
 //individuare l'area che ospita le tessere da trascinare
 const boardGame = document.getElementById('tiles-box');
 
-//all'avvio del gioco rimescola le tessere in ordine casuale
-const shuffleFlower = shuffleArray(imgFlower)
-
-const shuffleCat = shuffleArray(imgCat)
-
-const shuffleLandscape = shuffleArray(imgLandscape)
-
-const shuffleAirbaloon = shuffleArray(imgAirbaloon)
-
-const shuffleWolf = shuffleArray(imgWolf)
-
-const shuffleVillage = shuffleArray(imgVillage)
-
 const selected = document.querySelector('.selected')
 
 //istruzioni del gioco
@@ -50,6 +37,8 @@ const imageChoice = document.getElementById('wrap-image')
 //immagine fiore
 const flower = document.getElementById('flower')
 
+// const flowerHard = document.getElementById('flower-hard')
+
 //immagine gatto
 const cat = document.getElementById('cat')
 
@@ -68,7 +57,24 @@ const textImg = document.getElementById('text-img')
 //testi che descrivono i livelli di difficoltà
 const description = document.getElementById('level-description')
 
+//all'avvio del gioco rimescola le tessere in ordine casuale
+const shuffleFlower = shuffleArray(imgFlower)
+
+const shuffleCat = shuffleArray(imgCat)
+
+const shuffleLandscape = shuffleArray(imgLandscape)
+
+const shuffleAirbaloon = shuffleArray(imgAirbaloon)
+
+const shuffleWolf = shuffleArray(imgWolf)
+
+const shuffleVillage = shuffleArray(imgVillage)
+
+// const shuffleFlowerHard = shuffleArray(imgFlower_hard)
+
 flower.style.display = 'none';
+
+// flowerHard.style.display = 'none';
 
 cat.style.display = 'none';
 
@@ -91,7 +97,8 @@ const imagesMap = {
     landscape: shuffleLandscape,
     airbaloon: shuffleAirbaloon,
     wolf: shuffleWolf,
-    village: shuffleVillage
+    village: shuffleVillage,
+    // imageHard: shuffleFlowerHard
 };
 
 // pulsanti difficoltà
@@ -134,6 +141,7 @@ play.addEventListener('click', () =>{
             //nascondi descrizioni
             description.style.display = 'none';
 
+
             Object.values(levels).forEach((btn) => (btn.style.display = 'none'));
 
             // mostra opzioni di immagini
@@ -143,6 +151,7 @@ play.addEventListener('click', () =>{
                 flower.style.display = 'flex';
                 cat.style.display = 'flex';
                 landscape.style.display = 'flex';
+
 
             }else if(button === medium){
 
@@ -163,22 +172,46 @@ play.addEventListener('click', () =>{
                 const element = document.getElementById(key);
                 element.addEventListener('click', () => {
 
-                    //dispone le tessere
-                    setupGame(imagesMap[key])
+                    if(button === easy){
+                        
+                        //dispone le tessere
+                        setupGame(imagesMap[key], 'large')
+                    }
 
                     //se si attiva qualsiasi immagine di difficoltà media
-                    if (button === medium) {
+                    else if (button === medium) {
+
+                        //dispone le tessere
+                        setupGame(imagesMap[key], 'large')
 
                         //imposta il contatore
                         countDown.style.display = 'flex'
 
                         //imposta il contenuto del timer a 20 minuti
-                        countDown.textContent = '15:00'
+                        countDown.textContent = '10:00'
                         
                         //fai partire il countdown che dura 10 minuti
-                        let fiftyMinutes = 60 * 15,
+                        let tenMinutes = 60 * 10,
                             display = countDown;
-                        startTimer(fiftyMinutes, display);
+                        startTimer(tenMinutes, display);
+                    }
+
+                    else if(button === hard){
+
+                        //dispone le tessere
+                        setupGame(imagesMap[key], 'small')
+
+                        //imposta il contatore
+                        countDown.style.display = 'flex'
+
+                        //imposta il contenuto del timer a 20 minuti
+                        countDown.textContent = '10:00'
+
+                        //fai partire il countdown che dura 10 minuti
+                        let sixMinutes = 60 * 6,
+                            display = countDown;
+                        startTimer(sixMinutes, display);
+
                     }
                 });
 
