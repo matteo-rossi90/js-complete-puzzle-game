@@ -168,6 +168,7 @@ play.addEventListener('click', () =>{
 
             }else{
 
+                //immagini della modalità difficile
                 city.style.display = 'block'
             }
 
@@ -177,8 +178,6 @@ play.addEventListener('click', () =>{
             // assegna gli eventi alle immagini
             Object.keys(imagesMap).forEach((key) => {
                 const element = document.getElementById(key);
-                console.log(imagesMap[key])
-                console.log(key)
                 element.addEventListener('click', () => {
                     
                     btnBox.style.display = 'none';
@@ -188,7 +187,8 @@ play.addEventListener('click', () =>{
                     if(button === easy){
                         
                         //crea l'area di gioco
-                        createBox('large')
+                        createBoardBox('large')
+                        createBoardGame('large')
 
                         //dispone le tessere
                         setupGame(imagesMap[key], 'large', 'large')
@@ -198,7 +198,8 @@ play.addEventListener('click', () =>{
                     else if (button === medium) {
 
                         //crea l'area di gioco
-                        createBox('large')
+                        createBoardBox('large')
+                        createBoardGame('large')
 
                         //dispone le tessere
                         setupGame(imagesMap[key], 'large', 'large')
@@ -218,7 +219,8 @@ play.addEventListener('click', () =>{
                     else if(button === hard){
 
                         //crea l'area di gioco
-                        createBox('small')
+                        createBoardBox('small')
+                        createBoardGame('small')
 
                         //dispone le tessere
                         setupGame(imagesMap[key], 'small', 'small')

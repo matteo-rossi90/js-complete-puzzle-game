@@ -1,17 +1,30 @@
 
 //// funzioni ////
 
-function createBox(lenBox){
+//genera l'area di gioco in cui le tessere devono essere ricomposte
+function createBoardBox(lenBox){
 
     let dimBox = '';
     if(lenBox === 'large'){
-        dimBox = 'width-box-large'
+        dimBox = 'game-box-large'
     }else if(lenBox === 'small'){
-        dimBox = 'width-box-small'
+        dimBox = 'game-box-small'
     }
 
     boardBox.classList.add(dimBox)
 
+}
+
+//genera l'area di gioco in cui le tessere sono in disordine
+function createBoardGame(tileBox){
+
+    let dimBox = '';
+    if (tileBox === 'large') {
+        dimBox = 'tile-box-large'
+    } else if (tileBox === 'small') {
+        dimBox = 'tile-box-small'
+    }
+    boardGame.classList.add(dimBox)
 }
 
 //rimescola le tessere in ordine casuale
@@ -45,7 +58,7 @@ function drop(event) {
 
         //se sono state inserite tutte le tessere
         if (isBoardFull()) {
-
+            console.log(isBoardFull())
             //controlla se tutte le tessere sono nella posizione corretta
             if (checkWin()) {
                 countDown.style.display = 'none'; //nascondi il countdown
@@ -93,7 +106,7 @@ function isBoardFull() {
 function createTiles(imagesArray, width) {
     for (let i = 0; i < imagesArray.length; i++) {
         const tile = document.createElement('div'); // creare un elemento blocco
-        tile.classList.add('tiles'); //aggiungere la classe tiles nell'elemento blocco
+        tile.classList.add('tiles-drag'); //aggiungere la classe tiles nell'elemento blocco
         
         let tileWidth = '';
         if (width === 'large') {
@@ -115,11 +128,11 @@ function createTiles(imagesArray, width) {
 
 }
 
-//genera le tessere che devono essere rilasciate nella'rea di gioco
+//genera le tessere che devono essere rilasciate nell'area di gioco
 function createDropZones(count, length) {
     for (let i = 0; i < count; i++) {
         const dropZone = document.createElement('div');
-        dropZone.classList.add('tiles-drag');
+        dropZone.classList.add('color-tiles');
         dropZone.addEventListener('dragover', allowDrop);
         dropZone.addEventListener('drop', drop);
 

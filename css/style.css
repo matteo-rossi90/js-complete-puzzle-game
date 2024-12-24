@@ -54,7 +54,7 @@ body{
     display: flex;
     justify-content: center;
     width: 100%;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
     gap: 3rem;
 }
 
@@ -148,6 +148,7 @@ body{
 #level-description{
     display:none;
     justify-content: space-between;
+    padding-top: 1.5rem;
     gap: 4rem;
     font-size: 21px;
 }
@@ -159,11 +160,6 @@ body{
 .card-desc{
     width: calc(100% / 3)
 }
-
-/* .btn:hover{ */
-    /* background-color: var(--color-white); */
-    /* color: var(--color-dark-bg); */
-/* } */
 
 #guide{
     display: none;
@@ -202,11 +198,11 @@ body{
     margin: 1rem 0;
 }
 
-.width-box-large{
+.game-box-large{
     width: 500px;
 }
 
-.width-box-small{
+.game-box-small{
     width: 450px;
 }
 
@@ -214,18 +210,21 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 400px;
+    /* width: 400px; */
     gap: 5px;
     margin: 1rem 0;
 }
 
-.tiles{
-    /* height: 80px; */
-    /* width: 80px; */
-    background-color: var(--color-dark-grey);
+.tile-box-large{
+    width: 400px;
 }
 
-.tiles-drag{
+.tile-box-small {
+    width: 380px;
+}
+
+.tiles-drag,
+.color-tiles{
     background-color: var(--color-dark-grey);
 }
 
@@ -307,7 +306,7 @@ img{
 #time{
     display: none;
     padding: 1rem 0;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 @keyframes fadeIn {
