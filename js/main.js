@@ -37,8 +37,6 @@ const imageChoice = document.getElementById('wrap-image')
 //immagine fiore
 const flower = document.getElementById('flower')
 
-// const flowerHard = document.getElementById('flower-hard')
-
 //immagine gatto
 const cat = document.getElementById('cat')
 
@@ -50,6 +48,8 @@ const airbaloon = document.getElementById('airbaloon')
 const wolf = document.getElementById('wolf')
 
 const village = document.getElementById('village')
+
+const city = document.getElementById('city')
 
 //testo sopra le immagini da scegliere
 const textImg = document.getElementById('text-img')
@@ -70,11 +70,9 @@ const shuffleWolf = shuffleArray(imgWolf)
 
 const shuffleVillage = shuffleArray(imgVillage)
 
-// const shuffleFlowerHard = shuffleArray(imgFlower_hard)
+const shuffleCity = shuffleArray(imgCity)
 
 flower.style.display = 'none';
-
-// flowerHard.style.display = 'none';
 
 cat.style.display = 'none';
 
@@ -86,11 +84,17 @@ wolf.style.display = 'none';
 
 village.style.display = 'none';
 
+city.style.display = 'none';
+
 const message = document.getElementById('message')
 
 let countDown = document.querySelector('#time')
 
-//immagini complete
+const topBoard = document.getElementById('top-board')
+
+const btnBox = document.getElementById('btn-line')
+
+//tutte le immagini disponibili
 const imagesMap = {
     flower: shuffleFlower,
     cat: shuffleCat,
@@ -98,7 +102,7 @@ const imagesMap = {
     airbaloon: shuffleAirbaloon,
     wolf: shuffleWolf,
     village: shuffleVillage,
-    // imageHard: shuffleFlowerHard
+    city: shuffleCity
 };
 
 // pulsanti difficoltà
@@ -148,20 +152,23 @@ play.addEventListener('click', () =>{
             if(button === easy){ // se si sceglie la modalità facile
                 
                 //immagini della modalità facile
-                flower.style.display = 'flex';
-                cat.style.display = 'flex';
-                landscape.style.display = 'flex';
+                flower.style.display = 'block';
+                cat.style.display = 'block';
+                landscape.style.display = 'block';
 
 
             }else if(button === medium){
 
                 //immagini della modalità media
-                airbaloon.style.display = 'flex';
+                airbaloon.style.display = 'block';
 
-                wolf.style.display = 'flex';
+                wolf.style.display = 'block';
 
-                village.style.display = 'flex';
+                village.style.display = 'block';
 
+            }else{
+
+                city.style.display = 'block'
             }
 
             //mostra il testo sopra le tre immagini
@@ -170,19 +177,31 @@ play.addEventListener('click', () =>{
             // assegna gli eventi alle immagini
             Object.keys(imagesMap).forEach((key) => {
                 const element = document.getElementById(key);
+                console.log(imagesMap[key])
+                console.log(key)
                 element.addEventListener('click', () => {
+                    
+                    btnBox.style.display = 'none';
+
+                    topBoard.style.display = 'none'
 
                     if(button === easy){
                         
+                        //crea l'area di gioco
+                        createBox('large')
+
                         //dispone le tessere
-                        setupGame(imagesMap[key], 'large')
+                        setupGame(imagesMap[key], 'large', 'large')
                     }
 
                     //se si attiva qualsiasi immagine di difficoltà media
                     else if (button === medium) {
 
+                        //crea l'area di gioco
+                        createBox('large')
+
                         //dispone le tessere
-                        setupGame(imagesMap[key], 'large')
+                        setupGame(imagesMap[key], 'large', 'large')
 
                         //imposta il contatore
                         countDown.style.display = 'flex'
@@ -198,14 +217,17 @@ play.addEventListener('click', () =>{
 
                     else if(button === hard){
 
+                        //crea l'area di gioco
+                        createBox('small')
+
                         //dispone le tessere
-                        setupGame(imagesMap[key], 'small')
+                        setupGame(imagesMap[key], 'small', 'small')
 
                         //imposta il contatore
                         countDown.style.display = 'flex'
 
                         //imposta il contenuto del timer a 20 minuti
-                        countDown.textContent = '10:00'
+                        countDown.textContent = '06:00'
 
                         //fai partire il countdown che dura 10 minuti
                         let sixMinutes = 60 * 6,

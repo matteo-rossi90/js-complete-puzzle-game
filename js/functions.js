@@ -1,6 +1,19 @@
 
 //// funzioni ////
 
+function createBox(lenBox){
+
+    let dimBox = '';
+    if(lenBox === 'large'){
+        dimBox = 'width-box-large'
+    }else if(lenBox === 'small'){
+        dimBox = 'width-box-small'
+    }
+
+    boardBox.classList.add(dimBox)
+
+}
+
 //rimescola le tessere in ordine casuale
 function shuffleArray(array) {
     const shuffledArray = array.slice();
@@ -77,11 +90,20 @@ function isBoardFull() {
 }
 
 //genera le tessere da trascinare
-function createTiles(imagesArray) {
+function createTiles(imagesArray, width) {
     for (let i = 0; i < imagesArray.length; i++) {
         const tile = document.createElement('div'); // creare un elemento blocco
         tile.classList.add('tiles'); //aggiungere la classe tiles nell'elemento blocco
-
+        
+        let tileWidth = '';
+        if (width === 'large') {
+            tileWidth = 'tile-large'
+        } else if (width === 'small') {
+            tileWidth = 'tile-small';
+        }
+        
+        tile.classList.add(tileWidth)
+        
         const imgElement = document.createElement('img'); //inserire l'elemento img
         imgElement.src = imagesArray[i]; //inserire l'elemento src delle singole immagini
         imgElement.draggable = true; //inserire nel markup l'attributo draggable
@@ -116,21 +138,21 @@ function createDropZones(count, length) {
 }
 
 //gestisce la creazione delle tessere e l'assegnazione del drag e drop
-function setupGame(imagesArray, length) {
+function setupGame(imagesArray, length, width) {
     flower.style.display = 'none';
     cat.style.display = 'none';
     landscape.style.display = 'none';
     village.style.display = 'none';
     wolf.style.display = 'none';
     airbaloon.style.display = 'none';
-    // flowerHard.style.display = 'none';
+    city.style.display = 'none';
     
     textImg.style.display = 'none';
 
     boardGame.innerHTML = ''; // svuota l'area di gioco
     boardBox.innerHTML = ''; // svuota l'area delle drop zones
 
-    createTiles(imagesArray);
+    createTiles(imagesArray, width);
     createDropZones(imagesArray.length, length);
 
     guide.style.display = 'block';

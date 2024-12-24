@@ -178,7 +178,7 @@ body{
 }
 
 #container{
-    width: 60%;
+    width: 70%;
     height: 661px;
     background-color: var(--color-dark-bg);
     box-shadow: 1px 2px 4px 2px rgba(121, 121, 121, 0.2);
@@ -189,15 +189,25 @@ body{
 
 #puzzle-box{
     padding: 2.5rem 0;
+    margin: 0 auto;
+    width: 85%;
 }
 
 #puzzle-board{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 500px;
+    /* width: 500px; */
     gap: 5px;
     margin: 1rem 0;
+}
+
+.width-box-large{
+    width: 500px;
+}
+
+.width-box-small{
+    width: 450px;
 }
 
 #tiles-box{
@@ -210,14 +220,12 @@ body{
 }
 
 .tiles{
-    height: 80px;
-    width: 80px;
+    /* height: 80px; */
+    /* width: 80px; */
     background-color: var(--color-dark-grey);
 }
 
 .tiles-drag{
-    /* height: 100px;  */
-    /* width: 100px; */
     background-color: var(--color-dark-grey);
 }
 
@@ -229,6 +237,16 @@ body{
 .dimension-small {
     width: 50px;
     height: 50px;
+}
+
+.tile-large{
+    width: 80px;
+    height: 80px;
+}
+
+.tile-small{
+    width: 40px;
+    height: 40px;
 }
 
 img{
