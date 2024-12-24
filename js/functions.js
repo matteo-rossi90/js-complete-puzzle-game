@@ -106,7 +106,7 @@ function isBoardFull() {
 function createTiles(imagesArray, width) {
     for (let i = 0; i < imagesArray.length; i++) {
         const tile = document.createElement('div'); // creare un elemento blocco
-        tile.classList.add('tiles-drag'); //aggiungere la classe tiles nell'elemento blocco
+        tile.classList.add('color-tiles'); //aggiungere la classe tiles nell'elemento blocco
         
         let tileWidth = '';
         if (width === 'large') {
@@ -132,7 +132,7 @@ function createTiles(imagesArray, width) {
 function createDropZones(count, length) {
     for (let i = 0; i < count; i++) {
         const dropZone = document.createElement('div');
-        dropZone.classList.add('color-tiles');
+        dropZone.classList.add('tiles-drag');
         dropZone.addEventListener('dragover', allowDrop);
         dropZone.addEventListener('drop', drop);
 
