@@ -98,6 +98,8 @@ florence.style.display = 'none'
 
 grassland.style.display = 'none'
 
+const boxMessage = document.getElementById('message-box')
+
 const message = document.getElementById('message')
 
 let countDown = document.querySelector('#time')

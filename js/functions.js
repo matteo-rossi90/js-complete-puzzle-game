@@ -66,6 +66,7 @@ function drop(event) {
                 message.innerHTML = 'Hai vinto!' //mostra il messaggio se le tessere sono nella posizione giusta
             } else {
                 countDown.style.display = 'none'; //nascondi il countdown
+                boxMessage.style.display = 'block'
                 message.style.display = 'block';
                 message.innerHTML = 'Game over!' //mostra il messaggio se le tessere sono nella posizione sbagliata
 
@@ -97,7 +98,7 @@ function checkWin() {
 function isBoardFull() {
     const dropZones = document.querySelectorAll('.tiles-drag');
     for (let i = 0; i < dropZones.length; i++) {
-        if (!dropZones[i].querySelector('img')) return false; //verifica se manca una tessere
+        if (!dropZones[i].querySelector('img')) return false; //verifica se manca una tessera
     }
     return true;
 }
@@ -192,9 +193,10 @@ function startTimer(duration, display) {
         if (--timer < 0) {
             clearInterval(interval)
             countDown.style.display = 'none';
+            boxMessage.style.display = 'block'
             message.style.display = 'block';
             message.innerHTML = 'Game over!';
-
+            
             reset.style.display = 'block'; //compare il pulsante per iniziare una nuova partita
             reset.addEventListener('click', function () {//pulsante per iniziare una nuova partita
                 location.reload();

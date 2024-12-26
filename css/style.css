@@ -265,6 +265,16 @@ img{
     object-fit: cover;
 }
 
+#message-box{
+    display: none;
+    height: 70%;
+    width: 100%;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 #message {
     display: none;
     position: fixed;
