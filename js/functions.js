@@ -152,13 +152,19 @@ function createDropZones(count, length) {
 
 //gestisce la creazione delle tessere e l'assegnazione del drag e drop
 function setupGame(imagesArray, length, width) {
+    
+    //nascondi immagini di base all'avvio del gioco
     flower.style.display = 'none';
     cat.style.display = 'none';
     landscape.style.display = 'none';
+
     village.style.display = 'none';
     wolf.style.display = 'none';
     airbaloon.style.display = 'none';
+
     city.style.display = 'none';
+    florence.style.display = 'none'
+    grassland.style.display = 'none'
     
     textImg.style.display = 'none';
 
@@ -173,8 +179,8 @@ function setupGame(imagesArray, length, width) {
 
 //genera un timer
 function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
-    var interval = setInterval(function () {
+    let timer = duration, minutes, seconds;
+    let interval = setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
 

@@ -34,22 +34,26 @@ const hard = document.getElementById('hard')
 
 const imageChoice = document.getElementById('wrap-image')
 
-//immagine fiore
+//immagini modalità facile
 const flower = document.getElementById('flower')
 
-//immagine gatto
 const cat = document.getElementById('cat')
 
-//immagine paesaggio
 const landscape = document.getElementById('landscape')
 
+//immagini modalità media
 const airbaloon = document.getElementById('airbaloon')
 
 const wolf = document.getElementById('wolf')
 
 const village = document.getElementById('village')
 
+//immagini modalità difficile
 const city = document.getElementById('city')
+
+const florence = document.getElementById('florence')
+
+const grassland = document.getElementById('grassland')
 
 //testo sopra le immagini da scegliere
 const textImg = document.getElementById('text-img')
@@ -72,6 +76,10 @@ const shuffleVillage = shuffleArray(imgVillage)
 
 const shuffleCity = shuffleArray(imgCity)
 
+const shuffleFlorence = shuffleArray(imgFlorence)
+
+const shuffleGrass = shuffleArray(imgGrassland)
+
 flower.style.display = 'none';
 
 cat.style.display = 'none';
@@ -85,6 +93,10 @@ wolf.style.display = 'none';
 village.style.display = 'none';
 
 city.style.display = 'none';
+
+florence.style.display = 'none'
+
+grassland.style.display = 'none'
 
 const message = document.getElementById('message')
 
@@ -102,7 +114,9 @@ const imagesMap = {
     airbaloon: shuffleAirbaloon,
     wolf: shuffleWolf,
     village: shuffleVillage,
-    city: shuffleCity
+    city: shuffleCity,
+    florence: shuffleFlorence,
+    grassland: shuffleGrass
 };
 
 // pulsanti difficoltà
@@ -153,11 +167,13 @@ play.addEventListener('click', () =>{
                 
                 //immagini della modalità facile
                 flower.style.display = 'block';
+
                 cat.style.display = 'block';
+
                 landscape.style.display = 'block';
 
 
-            }else if(button === medium){
+            }else if(button === medium){// se si sceglie la modalità media
 
                 //immagini della modalità media
                 airbaloon.style.display = 'block';
@@ -166,10 +182,14 @@ play.addEventListener('click', () =>{
 
                 village.style.display = 'block';
 
-            }else{
+            }else{// se si sceglie la modalità difficile
 
                 //immagini della modalità difficile
                 city.style.display = 'block'
+
+                florence.style.display = 'block'
+
+                grassland.style.display = 'block'
             }
 
             //mostra il testo sopra le tre immagini
@@ -178,11 +198,21 @@ play.addEventListener('click', () =>{
             // assegna gli eventi alle immagini
             Object.keys(imagesMap).forEach((key) => {
                 const element = document.getElementById(key);
+
+                if (!element) {
+                    console.error(`Elemento con ID '${key}' non trovato nel DOM.`);
+                    return; // Salta l'aggiunta del listener se l'elemento non esiste
+                }
+
+                console.log(`Aggiunto listener all'immagine '${key}'`);
+
+                // console.log(imagesMap[key])
+                // console.log(element)
                 element.addEventListener('click', () => {
                     
                     btnBox.style.display = 'none';
 
-                    topBoard.style.display = 'none'
+                    topBoard.style.display = 'none';
 
                     if(button === easy){
                         
