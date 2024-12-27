@@ -109,6 +109,8 @@ const topBoard = document.getElementById('top-board')
 
 const btnBox = document.getElementById('btn-line')
 
+const title = document.getElementById('title')
+
 //tutte le immagini disponibili
 const imagesMap = {
     flower: shuffleFlower,
@@ -128,6 +130,25 @@ const levels = {
     medium,
     hard,
 };
+
+//titolo inserito in modo dinamico
+const string = 'Puzzle Game'
+
+for(let i=0; i < string.length; i++){
+    let char = string[i]
+
+    const span = document.createElement("span");
+    span.className = "letter";
+    span.style.setProperty("--i", i + 1);
+
+    //se non c'è una lettera, inserisci uno spazio
+    if (char === " ") {
+        span.innerHTML = "&nbsp;"; 
+    } else {
+        span.textContent = char;
+    }
+    title.appendChild(span);
+}
 
 //al click del pulsante inizia il gioco
 play.addEventListener('click', () =>{

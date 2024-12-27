@@ -22,14 +22,9 @@
 }
 
 body{
-    background-image: url('../img/image_bg3.webp');
-    background-size:cover;
+    background-image: url('../img/puzzle-bg4.jpg');
+    background-size:contain;
     color: var(--color-white)
-}
-
-main{
-    display: flex;
-    align-items: stretch;
 }
 
 #top-board,
@@ -46,6 +41,18 @@ main{
     font-size: 4rem;
     padding-bottom: 1.5rem;
     text-align:center;
+
+}
+
+#title span{
+    display: inline-block;
+    animation: waveTitle 1s infinite;
+    animation-delay: calc(.1s * var(--i));
+}
+
+#title .letter:nth-child(n):empty {
+    width: 0.5em;
+    animation: none;
 }
 
 #choice{
@@ -357,6 +364,19 @@ img{
     to{
         opacity: 1;
         transform: translateY(0) scale(1.2);
+    }
+}
+
+@keyframes waveTitle {
+
+    0%,
+    40%,
+    100% {
+        transform: translateY(0)
+    }
+
+    20% {
+        transform: translateY(-20px)
     }
 }
 
