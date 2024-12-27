@@ -12,6 +12,7 @@ const boardBox = document.getElementById('puzzle-board');
 //individuare l'area che ospita le tessere da trascinare
 const boardGame = document.getElementById('tiles-box');
 
+//titolo principale
 const selected = document.querySelector('.selected')
 
 //istruzioni del gioco

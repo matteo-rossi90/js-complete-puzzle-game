@@ -315,6 +315,12 @@ img{
     border-radius: 15px;
     object-fit: cover;
     cursor:pointer;
+    transition: ease 0.3s;
+}
+
+.card-img img:hover{
+    transform: scale(1.1);
+    
 }
 
 #text-img{
@@ -329,6 +335,29 @@ img{
     display: none;
     padding: 1rem 0;
     font-size: 20px;
+}
+
+/* animazioni */
+
+.selected,
+#play-box{
+    transform: scale(1.2);
+    animation: entryTitle 0.6s ease;  
+}
+
+
+
+@keyframes entryTitle {
+    from{
+        opacity: 0;
+        transform: translateY(100%) scale(1.2);
+        
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1.2);
+    }
 }
 
 @keyframes fadeIn {
