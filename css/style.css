@@ -38,7 +38,7 @@ body{
 
 #title{
     font-weight: 600;
-    font-size: 4rem;
+    font-size: 6rem;
     padding-bottom: 1.5rem;
     text-align:center;
 
@@ -53,6 +53,34 @@ body{
 #title .letter:nth-child(n):empty {
     width: 0.5em;
     animation: none;
+}
+
+#instruct{
+    display:none;
+    padding: 3rem 0;
+}
+
+#instruct > h3{
+    font-size: 3rem;
+    padding-bottom: 1.2rem;
+}
+
+#instruct > ul{
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+}
+
+#instruct > ul li{
+    padding-bottom: 1rem;
+}
+
+.spacing{
+    padding-bottom: 1.2rem;
+    font-size: 18px;
+}
+
+.text{
+    font-size: 18px;
 }
 
 #choice{
@@ -348,7 +376,6 @@ img{
 
 .selected,
 #play-box{
-    transform: scale(1.2);
     animation: entryTitle 0.6s ease;  
 }
 
@@ -357,13 +384,13 @@ img{
 @keyframes entryTitle {
     from{
         opacity: 0;
-        transform: translateY(100%) scale(1.2);
+        transform: translateY(100%)
         
     }
 
     to{
         opacity: 1;
-        transform: translateY(0) scale(1.2);
+        transform: translateY(0)
     }
 }
 

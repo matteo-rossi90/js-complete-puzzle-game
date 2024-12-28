@@ -39,14 +39,58 @@ for(let i=0; i < string.length; i++){
     title.appendChild(span);
 }
 
+//al click del pulsante info mostra la guida del gioco
+info.addEventListener('click', () =>{
+
+    //nasconde il titolo
+    selected.style.display = 'none';
+
+    //mostra il tasto play
+    play.style.display = 'flex';
+
+    //nasconde il tasto info
+    info.style.display = 'none';
+
+    //mostra le istruzioni
+    instruct.style.display = 'block'
+
+    //stampa le istruzioni del gioco in pagina
+    instruct.innerHTML = `
+        <h3>Come si gioca?</h3>
+        <p class="spacing"> 
+            Lo scopo del gioco è creare un puzzle partendo da un'immagine predefinita. 
+            Avrai delle tessere in cui è stata divisa l'immagine e dovrai ricomporla riordinando le tessere nell'ordine corretto.
+        </p>
+        <p class="spacing">
+            Esistono tre livelli di difficoltà. Ogni livello offre immagini diverse e 
+            presenta alcune caratteristiche:
+            <ul class="spacing">
+                <li><strong>Modalità facile:</strong> la versione di gioco più semplice in cui le tessere disponibili sono più grandi e non c'è un timer entro il quale completare il gioco</li>
+                <li><strong>Modalità Media: </strong>in questo livello le tessere sono sempre grandi ma hai a disposizione solo fino a 10 minuti per completare il gioco </li>
+                <li><strong>Modalità difficile: </strong> in questo livello hai solo fino a 6 minuti per ricomporre un'immagine e dovrai usare tessere più piccole</li>
+            </ul>
+        </p>
+        <p class="text">
+            Se non riesci a ricomporre l'immagine dando un ordine sbagliato alle tessere o entro lo scadere del tempo, hai perso! Puoi comunque ricominciare
+            una nuova partita. Premi il tasto <strong>Inizia</strong> per giocare.
+
+        </p>`
+})
+
 //al click del pulsante inizia il gioco
 play.addEventListener('click', () =>{
 
     //nasconde il titolo
     selected.style.display = 'none';
 
-    //nasconde il tasto start
+    //nasconde il tasto play
     play.style.display = 'none';
+
+    //nasconde il tasto info
+    info.style.display = 'none';
+
+    //nasconde le istruzioni
+    instruct.style.display = 'none'
 
     //mostra il testo sopra i tre livelli di difficoltà
     choice.style.display = 'block'

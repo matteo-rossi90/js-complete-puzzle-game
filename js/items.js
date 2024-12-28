@@ -1,6 +1,8 @@
 //individuare l'elemento corrispondente al pulsante di inizio gioco
 const play = document.getElementById('play')
 
+const info = document.getElementById('info')
+
 //individuare il pulsante reset
 const reset = document.getElementById('reset');
 
@@ -79,6 +81,7 @@ const shuffleFlorence = shuffleArray(imgFlorence)
 
 const shuffleGrass = shuffleArray(imgGrassland)
 
+//all'avvio del gioco le immagini disponibili sono nascoste
 flower.style.display = 'none';
 
 cat.style.display = 'none';
@@ -97,14 +100,23 @@ florence.style.display = 'none'
 
 grassland.style.display = 'none'
 
+//box del messaggio
 const boxMessage = document.getElementById('message-box')
 
+//messaggio al giocatore
 const message = document.getElementById('message')
 
+//timer
 let countDown = document.querySelector('#time')
 
+//parte in alto del gioco
 const topBoard = document.getElementById('top-board')
 
+//box che ospita tutti i bottoni del livello difficoltà
 const btnBox = document.getElementById('btn-line')
 
+//titolo
 const title = document.getElementById('title')
+
+//area che accoglie le istruzioni
+const instruct = document.getElementById('instruct')
