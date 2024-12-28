@@ -53,6 +53,7 @@ info.addEventListener('click', () =>{
 
     //mostra le istruzioni
     instruct.style.display = 'block'
+    instruct.style.animation = 'fadeIn 0.6s ease'
 
     //stampa le istruzioni del gioco in pagina
     instruct.innerHTML = `
@@ -67,7 +68,7 @@ info.addEventListener('click', () =>{
             <ul class="spacing">
                 <li><strong>Modalità facile:</strong> la versione di gioco più semplice in cui le tessere disponibili sono più grandi e non c'è un timer entro il quale completare il gioco</li>
                 <li><strong>Modalità Media: </strong>in questo livello le tessere sono sempre grandi ma hai a disposizione solo fino a 10 minuti per completare il gioco </li>
-                <li><strong>Modalità difficile: </strong> in questo livello hai solo fino a 6 minuti per ricomporre un'immagine e dovrai usare tessere più piccole</li>
+                <li><strong>Modalità difficile: </strong> in questo livello hai solo fino a 8 minuti per ricomporre un'immagine e dovrai usare tessere più piccole</li>
             </ul>
         </p>
         <p class="text">
@@ -94,15 +95,21 @@ play.addEventListener('click', () =>{
 
     //mostra il testo sopra i tre livelli di difficoltà
     choice.style.display = 'block'
+    choice.style.animation = 'fadeIn 0.6s ease'
 
     // mostra pulsanti di difficoltà
-    Object.values(levels).forEach((button) => (button.style.display = 'inline-block'));
+    Object.values(levels).forEach((button) => {
+        button.style.display = 'inline-block'
+        button.style.animation = 'entryTitle 0.6s ease'
+    });
 
     //testo che appare sopra i tre pulsanti
     choice.style.display = 'block';
+    choice.style.animation = 'fadeIn 0.6s ease'
 
     //visualizza la descrizione dei livelli di difficoltà
     description.style.display = 'flex';
+    description.style.animation = 'entryTitle 0.6s ease'
 
     // genera i livelli di difficoltà
     Object.values(levels).forEach((button) => {
@@ -216,12 +223,12 @@ play.addEventListener('click', () =>{
                         countDown.style.display = 'flex'
 
                         //imposta il contenuto del timer a 6 minuti
-                        countDown.textContent = '06:00'
+                        countDown.textContent = '10:00'
 
                         //fai partire il countdown che dura 6 minuti
                         let eightMinutes = 60 * 8,
                             display = countDown;
-                        startTimer(sixMinutes, display);
+                        startTimer(eightMinutes, display);
 
                     }
                 });

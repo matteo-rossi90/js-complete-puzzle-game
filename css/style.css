@@ -19,6 +19,8 @@
     --color-medium-clicked: rgb(202, 136, 14);
     --color-hard: rgba(255, 0, 0, 0.833);
     --color-hard-clicked: rgba(159, 4, 4, 0.833);
+    --color-info: violet;
+    --color-info-clicked: rgb(156, 85, 156);
 }
 
 body{
@@ -120,6 +122,17 @@ body{
     transform: translateY(4px);
 }
 
+.btn-info{
+    background-color: var(--color-info);
+    box-shadow: 0 9px var(--color-info-clicked);
+}
+
+.btn-info:active{
+    background-color: var(--color-info-clicked);
+    box-shadow: 0 5px var(--color-white);
+    transform: translateY(4px);
+}
+
 .btn,
 .btn-mode{
     border-radius: 15px;
@@ -149,6 +162,7 @@ body{
 }
 
 #play,
+#info,
 #easy,
 #medium,
 #hard{
@@ -374,12 +388,11 @@ img{
 
 /* animazioni */
 
+
 .selected,
 #play-box{
     animation: entryTitle 0.6s ease;  
 }
-
-
 
 @keyframes entryTitle {
     from{
