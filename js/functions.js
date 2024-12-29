@@ -74,7 +74,7 @@ function drop(event) {
             }
 
             reset.style.display = 'block'; //compare il pulsante per iniziare una nuova partita
-
+            reset.style.animation = 'fadeIn 0.6s ease' // animazione pulsante
             reset.addEventListener('click', function () {//pulsante per iniziare una nuova partita
                 location.reload();
             });
@@ -126,7 +126,7 @@ function createTiles(imagesArray, width) {
         imgElement.addEventListener('dragstart', drag); //impostare la capacità di trascinare le tessere grazie alla funzione
         tile.appendChild(imgElement); // integrare tutti gli elementi all'elemento blocco
         
-        boardGame.style.animation = 'fadeTiles 0.8s ease'
+        boardGame.style.animation = 'fadeTiles 0.8s ease'//aimazione tiles
         boardGame.appendChild(tile); //integrare l'elemento blocco all'area di gioco dove si pescano le tessere
     }
 
@@ -203,6 +203,7 @@ function startTimer(duration, display) {
             message.innerHTML = 'Game over!';
             
             reset.style.display = 'block'; //compare il pulsante per iniziare una nuova partita
+            reset.style.animaion = 'fadeIn 0.6s ease'
             reset.addEventListener('click', function () {//pulsante per iniziare una nuova partita
                 location.reload();
             });
