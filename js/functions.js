@@ -2,18 +2,18 @@
 //// funzioni ////
 
 //genera l'area di gioco in cui le tessere devono essere ricomposte
-function createBoardBox(lenBox){
+// function createBoardBox(lenBox){
 
-    let dimBox = '';
-    if(lenBox === 'large'){
-        dimBox = 'game-box-large'
-    }else if(lenBox === 'small'){
-        dimBox = 'game-box-small'
-    }
+    // let dimBox = '';
+    // if(lenBox === 'large'){
+        // dimBox = 'game-box-large'
+    // }else if(lenBox === 'small'){
+        // dimBox = 'game-box-small'
+    // }
 
-    boardBox.classList.add(dimBox)
+    // boardBox.classList.add(dimBox)
 
-}
+// }
 
 //genera l'area di gioco in cui le tessere sono in disordine
 function createBoardGame(tileBox){
@@ -147,6 +147,7 @@ function createDropZones(count, length) {
         }
 
         dropZone.classList.add(dimensionClass);
+        boardBox.classList.add('game-box')
         boardBox.appendChild(dropZone);
 
     }

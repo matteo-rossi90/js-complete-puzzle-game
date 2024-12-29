@@ -67,7 +67,7 @@ info.addEventListener('click', () =>{
             presenta alcune caratteristiche:
             <ul class="spacing">
                 <li><strong>Modalità facile:</strong> la versione di gioco più semplice in cui le tessere disponibili sono più grandi e non c'è un timer entro il quale completare il gioco</li>
-                <li><strong>Modalità Media: </strong>in questo livello le tessere sono sempre grandi ma hai a disposizione solo fino a 10 minuti per completare il gioco </li>
+                <li><strong>Modalità Media: </strong>in questo livello le tessere sono sempre grandi ma hai a disposizione solo fino a 5 minuti per completare il gioco </li>
                 <li><strong>Modalità difficile: </strong> in questo livello hai solo fino a 8 minuti per ricomporre un'immagine e dovrai usare tessere più piccole</li>
             </ul>
         </p>
@@ -159,13 +159,20 @@ play.addEventListener('click', () =>{
             //mostra il testo sopra le tre immagini
             textImg.style.display = 'block';
 
+            suggest.style.display = 'block';
+            suggest.innerHTML = `
+                <p class="spacing">
+                    <strong>Consiglio:</strong>
+                    guarda per qualche minuto l'immagine che vuoi scegliere, in modo da memorizzarne i dettagli
+                </p>`
+
             // assegna gli eventi alle immagini
             Object.keys(imagesMap).forEach((key) => {
                 const element = document.getElementById(key);
 
                 if (!element) {
                     console.error(`Elemento con ID '${key}' non trovato nel DOM.`);
-                    return; // Salta l'aggiunta del listener se l'elemento non esiste
+                    return; // salta l'aggiunta del listener se l'elemento non esiste
                 }
 
                 console.log(`Aggiunto listener all'immagine '${key}'`);
@@ -173,6 +180,8 @@ play.addEventListener('click', () =>{
                 // console.log(imagesMap[key])
                 // console.log(element)
                 element.addEventListener('click', () => {
+
+                    imageChoice.style.display = 'none'
                     
                     btnBox.style.display = 'none';
 
@@ -181,7 +190,7 @@ play.addEventListener('click', () =>{
                     if(button === easy){
                         
                         //crea l'area di gioco
-                        createBoardBox('large')
+                        // createBoardBox('large')
                         createBoardGame('large')
 
                         //dispone le tessere
@@ -192,7 +201,7 @@ play.addEventListener('click', () =>{
                     else if (button === medium) {
 
                         //crea l'area di gioco
-                        createBoardBox('large')
+                        // createBoardBox('large')
                         createBoardGame('large')
 
                         //dispone le tessere
@@ -202,18 +211,18 @@ play.addEventListener('click', () =>{
                         countDown.style.display = 'flex'
 
                         //imposta il contenuto del timer a 10 minuti
-                        countDown.textContent = '10:00'
+                        countDown.textContent = '05:00'
                         
                         //fai partire il countdown che dura 10 minuti
-                        let tenMinutes = 60 * 10,
+                        let fiveMinutes = 60 * 5,
                             display = countDown;
-                        startTimer(tenMinutes, display);
+                        startTimer(fiveMinutes, display);
                     }
 
                     else if(button === hard){
 
                         //crea l'area di gioco
-                        createBoardBox('small')
+                        // createBoardBox('small')
                         createBoardGame('small')
 
                         //dispone le tessere
@@ -223,7 +232,7 @@ play.addEventListener('click', () =>{
                         countDown.style.display = 'flex'
 
                         //imposta il contenuto del timer a 6 minuti
-                        countDown.textContent = '10:00'
+                        countDown.textContent = '08:00'
 
                         //fai partire il countdown che dura 6 minuti
                         let eightMinutes = 60 * 8,

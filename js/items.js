@@ -120,3 +120,6 @@ const title = document.getElementById('title')
 
 //area che accoglie le istruzioni
 const instruct = document.getElementById('instruct')
+
+//suggerimento
+const suggest = document.getElementById('suggestion')

@@ -157,7 +157,8 @@ body{
 #reset,
 #easy,
 #medium,
-#hard {
+#hard,
+#suggestion {
     display: none;
 }
 
@@ -254,24 +255,22 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* width: 500px; */
-    gap: 5px;
+    /* gap: 5px; */
     margin: 1rem 0;
 }
 
-.game-box-large{
-    width: 500px;
+.game-box{
+    width: 400px;
 }
 
-.game-box-small{
-    width: 450px;
-}
+/* .game-box-small{ */
+    /* width: 450px; */
+/* } */
 
 #tiles-box{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* width: 400px; */
     gap: 5px;
     margin: 1rem 0;
 }
@@ -287,6 +286,10 @@ body{
 .tiles-drag,
 .color-tiles{
     background-color: var(--color-dark-grey);
+}
+
+.tiles-drag{
+    border: 1px dashed var(--color-dark-bg);
 }
 
 .dimension-large {
@@ -348,12 +351,13 @@ img{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    margin: 0 1.5rem;
 }
 
 #wrap-image{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
 }
 
 .card-img{
@@ -384,6 +388,16 @@ img{
     display: none;
     padding: 1rem 0;
     font-size: 20px;
+}
+
+.box-wrap{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#suggestion{
+    padding-top: 1.5rem;
 }
 
 /* animazioni */
