@@ -434,6 +434,32 @@ img{
     }
 }
 
+@keyframes fadeBox {
+    
+    from{
+        opacity: 0;
+        transform: translateX(-30%)
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+@keyframes fadeTiles {
+
+    from {
+        opacity: 0;
+        transform: translateX(30%)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

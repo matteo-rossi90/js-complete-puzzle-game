@@ -125,6 +125,8 @@ function createTiles(imagesArray, width) {
         imgElement.id = `tile-${parseInt(imagesArray[i].match(/\d+/)[0])}`; //inserire l'id della singola tessera
         imgElement.addEventListener('dragstart', drag); //impostare la capacità di trascinare le tessere grazie alla funzione
         tile.appendChild(imgElement); // integrare tutti gli elementi all'elemento blocco
+        
+        boardGame.style.animation = 'fadeTiles 0.8s ease'
         boardGame.appendChild(tile); //integrare l'elemento blocco all'area di gioco dove si pescano le tessere
     }
 
@@ -148,6 +150,7 @@ function createDropZones(count, length) {
 
         dropZone.classList.add(dimensionClass);
         boardBox.classList.add('game-box')
+        boardBox.style.animation = 'fadeBox 0.6s ease'
         boardBox.appendChild(dropZone);
 
     }

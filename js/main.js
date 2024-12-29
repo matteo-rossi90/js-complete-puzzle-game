@@ -53,7 +53,7 @@ info.addEventListener('click', () =>{
 
     //mostra le istruzioni
     instruct.style.display = 'block'
-    instruct.style.animation = 'fadeIn 0.6s ease'
+    instruct.style.animation = 'fadeIn 0.8s ease'
 
     //stampa le istruzioni del gioco in pagina
     instruct.innerHTML = `
@@ -95,21 +95,21 @@ play.addEventListener('click', () =>{
 
     //mostra il testo sopra i tre livelli di difficoltà
     choice.style.display = 'block'
-    choice.style.animation = 'fadeIn 0.6s ease'
+    choice.style.animation = 'fadeIn 0.8s ease'
 
     // mostra pulsanti di difficoltà
     Object.values(levels).forEach((button) => {
         button.style.display = 'inline-block'
-        button.style.animation = 'entryTitle 0.6s ease'
+        button.style.animation = 'entryTitle 0.8s ease'
     });
 
     //testo che appare sopra i tre pulsanti
     choice.style.display = 'block';
-    choice.style.animation = 'fadeIn 0.6s ease'
+    choice.style.animation = 'fadeIn 0.8s ease'
 
     //visualizza la descrizione dei livelli di difficoltà
     description.style.display = 'flex';
-    description.style.animation = 'entryTitle 0.6s ease'
+    description.style.animation = 'entryTitle 0.8s ease'
 
     // genera i livelli di difficoltà
     Object.values(levels).forEach((button) => {
@@ -126,34 +126,45 @@ play.addEventListener('click', () =>{
 
             Object.values(levels).forEach((btn) => (btn.style.display = 'none'));
 
+            imageChoice.style.display = 'fadeBox 0.8s ease'
+
             // mostra opzioni di immagini
             if(button === easy){ // se si sceglie la modalità facile
                 
                 //immagini della modalità facile
                 flower.style.display = 'block';
+                flower.style.animation = 'fadeIn 0.8s ease';
 
                 cat.style.display = 'block';
+                cat.style.animation = 'fadeIn 0.8s ease';
 
                 landscape.style.display = 'block';
+                landscape.style.animation = 'fadeIn 0.8s ease';
 
 
             }else if(button === medium){// se si sceglie la modalità media
 
                 //immagini della modalità media
                 airbaloon.style.display = 'block';
+                airbaloon.style.animation = 'fadeIn 0.8s ease';
 
                 wolf.style.display = 'block';
+                wolf.style.animation = 'fadeIn 0.8s ease';
 
                 village.style.display = 'block';
+                village.style.animation = 'fadeIn 0.8s ease';
 
             }else{// se si sceglie la modalità difficile
 
                 //immagini della modalità difficile
                 city.style.display = 'block'
+                city.style.animation = 'fadeIn 0.8s ease';
 
                 florence.style.display = 'block'
+                florence.style.animation = 'fadeIn 0.8s ease';
 
                 grassland.style.display = 'block'
+                grassland.style.animation = 'fadeIn 0.8s ease';
             }
 
             //mostra il testo sopra le tre immagini
@@ -165,6 +176,8 @@ play.addEventListener('click', () =>{
                     <strong>Consiglio:</strong>
                     guarda per qualche minuto l'immagine che vuoi scegliere, in modo da memorizzarne i dettagli
                 </p>`
+            
+            suggest.style.animation = 'fadeIn 0.8s ease'
 
             // assegna gli eventi alle immagini
             Object.keys(imagesMap).forEach((key) => {
@@ -188,13 +201,14 @@ play.addEventListener('click', () =>{
                     topBoard.style.display = 'none';
 
                     if(button === easy){
-                        
+
                         //crea l'area di gioco
                         // createBoardBox('large')
                         createBoardGame('large')
 
                         //dispone le tessere
                         setupGame(imagesMap[key], 'large', 'large')
+
                     }
 
                     //se si attiva qualsiasi immagine di difficoltà media
@@ -212,6 +226,8 @@ play.addEventListener('click', () =>{
 
                         //imposta il contenuto del timer a 10 minuti
                         countDown.textContent = '05:00'
+
+                        countDown.style.animation = 'entryTitle 0.6s ease'
                         
                         //fai partire il countdown che dura 10 minuti
                         let fiveMinutes = 60 * 5,
@@ -233,6 +249,8 @@ play.addEventListener('click', () =>{
 
                         //imposta il contenuto del timer a 6 minuti
                         countDown.textContent = '08:00'
+
+                        countDown.style.animation = 'entryTitle 0.6s ease'
 
                         //fai partire il countdown che dura 6 minuti
                         let eightMinutes = 60 * 8,
