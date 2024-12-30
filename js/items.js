@@ -103,6 +103,9 @@ grassland.style.display = 'none'
 //box del messaggio
 const boxMessage = document.getElementById('message-box')
 
+//animazione fuochi d'artificio
+const fireworks = document.getElementById('animation-winner')
+
 //messaggio al giocatore
 const message = document.getElementById('message')
 

@@ -325,6 +325,7 @@ img{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    overflow:hidden;
 }
 
 #message {
@@ -467,6 +468,52 @@ img{
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes colorRotate {
+    from {
+        color: rgb(64, 11, 144);
+    }
+
+    10% {
+        color: #9000ff;
+    }
+
+    20% {
+        color: #0073ff;
+    }
+
+    30% {
+        color: #15a4a7;
+    }
+
+    40% {
+        color: #20be45;
+    }
+
+    50% {
+        color: #fff566;
+    }
+
+    60% {
+        color: #f4ac28;
+    }
+
+    70% {
+        color: #f48028;
+    }
+
+    80% {
+        color: #f44a28;
+    }
+
+    90% {
+        color: #f42828;
+    }
+
+    100% {
+        color: #f4287d;
     }
 }
 

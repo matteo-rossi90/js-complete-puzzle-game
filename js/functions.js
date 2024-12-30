@@ -63,8 +63,10 @@ function drop(event) {
             if (checkWin()) {
                 countDown.style.display = 'none'; //nascondi il countdown
                 boxMessage.style.display = 'block'
+                fireworks.style.display = 'block'
                 message.style.display = 'block';
                 message.innerHTML = 'Hai vinto!' //mostra il messaggio se le tessere sono nella posizione giusta
+                message.style.animation = 'colorRotate 0.8s infinite'
             } else {
                 countDown.style.display = 'none'; //nascondi il countdown
                 boxMessage.style.display = 'block'
@@ -203,7 +205,7 @@ function startTimer(duration, display) {
             message.innerHTML = 'Game over!';
             
             reset.style.display = 'block'; //compare il pulsante per iniziare una nuova partita
-            reset.style.animaion = 'fadeIn 0.6s ease'
+            reset.style.animation = 'fadeIn 0.6s ease'
             reset.addEventListener('click', function () {//pulsante per iniziare una nuova partita
                 location.reload();
             });
