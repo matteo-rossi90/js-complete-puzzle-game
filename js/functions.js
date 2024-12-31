@@ -61,14 +61,14 @@ function drop(event) {
             console.log(isBoardFull())
             //controlla se tutte le tessere sono nella posizione corretta
             if (checkWin()) {
-                countDown.style.display = 'none'; //nascondi il countdown
+                boxTimer.style.display = 'none'; //nascondi il countdown
                 boxMessage.style.display = 'block'
                 fireworks.style.display = 'block'
                 message.style.display = 'block';
                 message.innerHTML = 'Hai vinto!' //mostra il messaggio se le tessere sono nella posizione giusta
                 message.style.animation = 'colorRotate 0.8s infinite'
             } else {
-                countDown.style.display = 'none'; //nascondi il countdown
+                boxTimer.style.display = 'none'; //nascondi il countdown
                 boxMessage.style.display = 'block'
                 message.style.display = 'block';
                 message.innerHTML = 'Game over!' //mostra il messaggio se le tessere sono nella posizione sbagliata
@@ -199,7 +199,7 @@ function startTimer(duration, display) {
 
         if (--timer < 0) {
             clearInterval(interval)
-            countDown.style.display = 'none';
+            boxTimer.style.display = 'none';
             boxMessage.style.display = 'block'
             message.style.display = 'block';
             message.innerHTML = 'Game over!';

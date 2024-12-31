@@ -386,8 +386,19 @@ img{
     text-align: center;
 }
 
-#time{
+#box-timer {
     display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+#clock img {
+    width: 60px;
+    height: 60px;
+}
+
+#time{
     padding: 1rem 0;
     font-size: 20px;
 }

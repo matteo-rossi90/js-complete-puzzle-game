@@ -112,6 +112,12 @@ const fireworks = document.getElementById('animation-winner')
 //messaggio al giocatore
 const message = document.getElementById('message')
 
+//box timer
+const boxTimer = document.getElementById('box-timer')
+
+//orologio
+const clock = document.getElementById('clock')
+
 //timer
 let countDown = document.querySelector('#time')
 

@@ -197,6 +197,15 @@ play.addEventListener('click', () =>{
 
                     puzzleBox.style.display = 'block'
 
+                    //mostra il timer e l'icona
+                    boxTimer.style.display = 'flex'
+
+                    clock.innerHTML = `
+                        <img src="./img/clock.gif">
+                    `
+                    //animazione
+                    boxTimer.style.animation = 'entryTitle 0.6s ease'
+
                     if(button === easy){
 
                         //crea l'area di gioco
@@ -205,6 +214,9 @@ play.addEventListener('click', () =>{
 
                         //dispone le tessere
                         setupGame(imagesMap[key], 'large', 'large')
+
+                        //nascondi timer nella modalità facile
+                        boxTimer.style.display = 'none'
 
                     }
 
@@ -218,15 +230,10 @@ play.addEventListener('click', () =>{
                         //dispone le tessere
                         setupGame(imagesMap[key], 'large', 'large')
 
-                        //imposta il contatore
-                        countDown.style.display = 'flex'
-
-                        //imposta il contenuto del timer a 10 minuti
+                        //imposta il contenuto del timer a 5 minuti
                         countDown.textContent = '05:00'
-
-                        countDown.style.animation = 'entryTitle 0.6s ease'
                         
-                        //fai partire il countdown che dura 10 minuti
+                        //fai partire il countdown che dura 5 minuti
                         let fiveMinutes = 60 * 5,
                             display = countDown;
                         startTimer(fiveMinutes, display);
@@ -241,15 +248,10 @@ play.addEventListener('click', () =>{
                         //dispone le tessere
                         setupGame(imagesMap[key], 'small', 'small')
 
-                        //imposta il contatore
-                        countDown.style.display = 'flex'
-
-                        //imposta il contenuto del timer a 6 minuti
+                        //imposta il contenuto del timer a 8 minuti
                         countDown.textContent = '08:00'
 
-                        countDown.style.animation = 'entryTitle 0.6s ease'
-
-                        //fai partire il countdown che dura 6 minuti
+                        //fai partire il countdown che dura 8 minuti
                         let eightMinutes = 60 * 8,
                             display = countDown;
                         startTimer(eightMinutes, display);
