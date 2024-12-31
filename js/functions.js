@@ -210,5 +210,11 @@ function startTimer(duration, display) {
                 location.reload();
             });
         }
+        
+        if(timer < 10){
+            boxTimer.style.color = 'tomato'
+            boxTimer.style.animation = 'pulse 1s infinite'
+        }
+
     }, 1000);
 }

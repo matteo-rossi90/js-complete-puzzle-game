@@ -374,7 +374,7 @@ img{
 
 .card-img img:hover{
     /* transform: scale(1.1); */
-    animation: pulseImage 1s infinite
+    animation: pulse 1s infinite
     
 }
 
@@ -434,7 +434,7 @@ img{
     }
 }
 
-@keyframes pulseImage{
+@keyframes pulse{
 
     0%,
     100%{
