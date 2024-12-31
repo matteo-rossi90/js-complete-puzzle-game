@@ -205,7 +205,7 @@ function startTimer(duration, display) {
             message.innerHTML = 'Game over!';
             
             reset.style.display = 'block'; //compare il pulsante per iniziare una nuova partita
-            reset.style.animation = 'fadeIn 0.6s ease'
+            reset.style.animation = 'fadeIn 0.8s ease'
             reset.addEventListener('click', function () {//pulsante per iniziare una nuova partita
                 location.reload();
             });

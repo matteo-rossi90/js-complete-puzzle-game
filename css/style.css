@@ -326,6 +326,7 @@ img{
     left: 50%;
     transform: translate(-50%, -50%);
     overflow:hidden;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 #message {
@@ -340,7 +341,6 @@ img{
     text-align: center;
     z-index: 1000;
     transform: translate(-50%, -50%);
-    animation: fadeIn 1s ease-in-out;
 }
 
 .show{
@@ -418,7 +418,7 @@ img{
 
 .selected,
 #play-box{
-    animation: entryTitle 0.6s ease;  
+    animation: entryTitle 1.5s ease;  
 }
 
 @keyframes entryTitle {

@@ -25,7 +25,7 @@ const string = 'Puzzle Game'
 
 for(let i=0; i < string.length; i++){
     let char = string[i]
-
+    
     const span = document.createElement("span");
     span.className = "letter";
     span.style.setProperty("--i", i + 1);
