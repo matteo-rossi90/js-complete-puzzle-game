@@ -25,7 +25,6 @@
 
 body{
     background-image: url('../img/puzzle-bg4.jpg');
-    background-size:contain 50%;
     color: var(--color-white)
 }
 
@@ -246,6 +245,7 @@ body{
 }
 
 #puzzle-box{
+    display: none;
     padding: 2.5rem 0;
     margin: 0 auto;
     width: 85%;

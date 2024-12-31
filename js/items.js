@@ -6,6 +6,9 @@ const info = document.getElementById('info')
 //individuare il pulsante reset
 const reset = document.getElementById('reset');
 
+//sezione di tutta l'area di gioco
+const puzzleBox = document.getElementById('puzzle-box');
+
 //individuare l'area in cui le tiles vengono trascinate le tessere
 const boardBox = document.getElementById('puzzle-board');
 

@@ -93,10 +93,6 @@ play.addEventListener('click', () =>{
     //nasconde le istruzioni
     instruct.style.display = 'none'
 
-    //mostra il testo sopra i tre livelli di difficoltà
-    choice.style.display = 'block'
-    choice.style.animation = 'fadeIn 0.8s ease'
-
     // mostra pulsanti di difficoltà
     Object.values(levels).forEach((button) => {
         button.style.display = 'inline-block'
@@ -123,10 +119,9 @@ play.addEventListener('click', () =>{
             //nascondi descrizioni
             description.style.display = 'none';
 
+            topBoard.style.display = 'none';
 
             Object.values(levels).forEach((btn) => (btn.style.display = 'none'));
-
-            imageChoice.style.display = 'fadeBox 0.8s ease'
 
             // mostra opzioni di immagini
             if(button === easy){ // se si sceglie la modalità facile
@@ -199,6 +194,8 @@ play.addEventListener('click', () =>{
                     btnBox.style.display = 'none';
 
                     topBoard.style.display = 'none';
+
+                    puzzleBox.style.display = 'block'
 
                     if(button === easy){
 
