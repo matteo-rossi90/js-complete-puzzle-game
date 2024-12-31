@@ -218,3 +218,16 @@ function startTimer(duration, display) {
 
     }, 1000);
 }
+
+//mostra il loader
+function showLoader(){
+    const loading = document.getElementById('loading');
+    loading.className = 'loader';
+    loading.style.display = 'block';
+}
+
+//nascondi loader
+function hideLoader(){
+    const loading = document.getElementById('loading');
+    loading.style.display = 'none';
+}

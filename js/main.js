@@ -20,24 +20,48 @@ const levels = {
     hard,
 };
 
-//titolo inserito in modo dinamico
-const string = 'Puzzle Game'
+//nasconde il titolo
+selected.style.display = 'none';
 
-for(let i=0; i < string.length; i++){
-    let char = string[i]
+//nasconde il pulsante play e il pulsante info
+boxBtn.style.display = 'none';
+
+// Mostra il loader inizialmente
+document.addEventListener("DOMContentLoaded", () => {
+
+    // mostra il loader
+    showLoader()
     
-    const span = document.createElement("span");
-    span.className = "letter";
-    span.style.setProperty("--i", i + 1);
+    // caricamento
+    setTimeout(() => {
 
-    //se non c'è una lettera, inserisci uno spazio
-    if (char === " ") {
-        span.innerHTML = "&nbsp;"; 
-    } else {
-        span.textContent = char;
-    }
-    title.appendChild(span);
-}
+        hideLoader()
+
+        //titolo inserito in modo dinamico
+
+        const string = 'Puzzle Game'
+        for (let i = 0; i < string.length; i++) {
+            let char = string[i]
+            const span = document.createElement("span");
+            span.className = "letter";
+            span.style.setProperty("--i", i + 1);
+
+            //se non c'è una lettera, inserisci uno spazio
+            if (char === " ") {
+                span.innerHTML = "&nbsp;";
+            } else {
+                span.textContent = char;
+            }
+            title.appendChild(span);
+        }
+
+        selected.style.display = 'block'
+        
+        //mostra il tasto play
+        boxBtn.style.display = 'flex';
+
+    }, 2000);
+});
 
 //al click del pulsante info mostra la guida del gioco
 info.addEventListener('click', () =>{
@@ -81,6 +105,8 @@ info.addEventListener('click', () =>{
 //al click del pulsante inizia il gioco
 play.addEventListener('click', () =>{
 
+    showLoader()
+
     //nasconde il titolo
     selected.style.display = 'none';
 
@@ -92,20 +118,26 @@ play.addEventListener('click', () =>{
 
     //nasconde le istruzioni
     instruct.style.display = 'none'
+    
+    setTimeout(() => {
 
-    // mostra pulsanti di difficoltà
-    Object.values(levels).forEach((button) => {
-        button.style.display = 'inline-block'
-        button.style.animation = 'entryTitle 0.8s ease'
-    });
+        hideLoader()
 
-    //testo che appare sopra i tre pulsanti
-    choice.style.display = 'block';
-    choice.style.animation = 'fadeIn 0.8s ease'
+        // mostra pulsanti di difficoltà
+        Object.values(levels).forEach((button) => {
+            button.style.display = 'inline-block'
+            button.style.animation = 'entryTitle 0.8s ease'
+        });
 
-    //visualizza la descrizione dei livelli di difficoltà
-    description.style.display = 'flex';
-    description.style.animation = 'entryTitle 0.8s ease'
+        //testo che appare sopra i tre pulsanti
+        choice.style.display = 'block';
+        choice.style.animation = 'fadeIn 0.8s ease'
+
+        //visualizza la descrizione dei livelli di difficoltà
+        description.style.display = 'flex';
+        description.style.animation = 'entryTitle 0.8s ease'
+        
+    }, 2000);
 
     // genera i livelli di difficoltà
     Object.values(levels).forEach((button) => {

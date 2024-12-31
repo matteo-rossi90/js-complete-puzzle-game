@@ -135,3 +135,5 @@ const instruct = document.getElementById('instruct')
 
 //suggerimento
 const suggest = document.getElementById('suggestion')
+
+const boxBtn = document.getElementById('play-box')
