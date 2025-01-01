@@ -5,7 +5,7 @@ Rispetto alla versione precedente, sono state aggiunte le seguenti modifiche:
 - 3 immagini differenti da scegliere in base alla difficoltà
 - una volta scelta l'immagine, sarà possibile effettuare il puzzle
 - nella modalità media e difficile si deve completare il gioco entro un tempo stabilito (5 minuti nella modalità media e 8 minuti nella modalità difficile)
-- se si sceglie la moadiltà difficile le tessere saranno anche più piccole, rendendo più ardua la decodificazione dei dettagli che compongono l'immagine
+- se si sceglie la modalità difficile le tessere saranno anche più piccole, rendendo più ardua la decodificazione dei dettagli che compongono l'immagine
 - presenza di animazioni e transizioni
 - un pulsante permette di mostrare l'immagine come modale durante il gioco
 
