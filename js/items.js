@@ -137,3 +137,9 @@ const instruct = document.getElementById('instruct')
 const suggest = document.getElementById('suggestion')
 
 const boxBtn = document.getElementById('play-box')
+
+//individuare gli elementi principali
+const imgBtn = document.getElementById('btn-image'); //pulsante
+const el = document.getElementById('overlay'); //box del modale
+const show = document.getElementById('image-show') //mostra immagine
+const span = document.getElementsByClassName("close")[0]; //pulsante per chiudere il modale

@@ -67,12 +67,13 @@ function drop(event) {
                 message.style.display = 'block';
                 message.innerHTML = 'Hai vinto!' //mostra il messaggio se le tessere sono nella posizione giusta
                 message.style.animation = 'colorRotate 0.8s infinite'
+                imgBtn.style.display = 'none'
             } else {
                 boxTimer.style.display = 'none'; //nascondi il countdown
                 boxMessage.style.display = 'block'
                 message.style.display = 'block';
                 message.innerHTML = 'Game over!' //mostra il messaggio se le tessere sono nella posizione sbagliata
-
+                imgBtn.style.display = 'none'
             }
 
             reset.style.display = 'block'; //compare il pulsante per iniziare una nuova partita
@@ -202,7 +203,8 @@ function startTimer(duration, display) {
             boxTimer.style.display = 'none';
             boxMessage.style.display = 'block'
             message.style.display = 'block';
-            message.innerHTML = 'Game over!';
+            message.innerHTML = 'Tempo scaduto!';
+            imgBtn.style.display = 'none'
             
             reset.style.display = 'block'; //compare il pulsante per iniziare una nuova partita
             reset.style.animation = 'fadeIn 0.8s ease'
@@ -230,4 +232,36 @@ function showLoader(){
 function hideLoader(){
     const loading = document.getElementById('loading');
     loading.style.display = 'none';
+}
+
+//genera un pulsante per la modale
+function getImage(imageKey) {
+
+    //oggetto che ospita le immagini da caricare
+    const objImages = {
+        flower: './img/easy/daisy.jpg',
+        cat: './img/easy/cat.jpg',
+        landscape: './img/easy/landscape.jpg',
+        airbaloon: './img/medium/airbaloon.jpg',
+        wolf: './img/medium/wolf.jpg',
+        village: './img/medium/village.jpg',
+        city: './img/hard/bigcity.jpg',
+        florence: './img/hard/florence.jpg',
+        grassland: './img/hard/grassland.jpg',
+    };
+
+    //associare al pulsante le immagini
+    imgBtn.addEventListener('click', () => {
+        //in base a un valore dell'oggetto aggiunge l'immagine da mostrare nel modale
+        if (objImages[imageKey]) {
+            el.innerHTML = `
+                <img src="${objImages[imageKey]}" alt="${imageKey}">`;
+            show.style.display = 'block'
+            span.onclick = function () {//al click del pulsante close nasconde il modale
+                show.style.display = 'none'
+            }
+        } else {
+            console.error(`Immagine non trovata per la chiave: ${imageKey}`);
+        }
+    });
 }

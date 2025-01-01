@@ -221,6 +221,8 @@ play.addEventListener('click', () =>{
                 // console.log(element)
                 element.addEventListener('click', () => {
 
+                    getImage(key);
+
                     imageChoice.style.display = 'none'
                     
                     btnBox.style.display = 'none';

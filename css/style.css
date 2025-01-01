@@ -413,6 +413,60 @@ img{
     padding-top: 1.5rem;
 }
 
+#btn-image{
+    display:block;
+    background-color: var(--color-info)
+}
+
+#btn-image:hover{
+    background-color: var(--color-info-clicked)
+}
+
+#overlay{
+    z-index:900
+}
+
+#overlay, 
+#image-show{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+}
+
+#image-show img{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#image-show{
+    display: none;
+    background-color: rgba(48, 48, 48, 0.6);
+    z-index: 800;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 4rem;
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: 900;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--color-white);
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* loader */
 
 
