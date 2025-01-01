@@ -415,11 +415,13 @@ img{
 
 #btn-image{
     display:block;
-    background-color: var(--color-info)
+    background-color: var(--color-info);
+    animation: entryTitle 0.6s ease;
 }
 
 #btn-image:hover{
-    background-color: var(--color-info-clicked)
+    background-color: var(--color-info-clicked);
+    transition: 0.2s ease-in-out;
 }
 
 #overlay{
