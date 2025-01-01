@@ -201,7 +201,7 @@ play.addEventListener('click', () =>{
             suggest.innerHTML = `
                 <p class="spacing">
                     <strong>Consiglio:</strong>
-                    guarda per qualche minuto l'immagine che vuoi scegliere, in modo da memorizzarne i dettagli
+                    premendo il tasto Immagine puoi visualizzare a parte l'immagine da modello per memorizzarne i dettagli
                 </p>`
             
             suggest.style.animation = 'fadeIn 0.8s ease'
