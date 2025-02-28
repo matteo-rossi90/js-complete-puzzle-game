@@ -1,4 +1,9 @@
-Creazione e sviluppo di un puzzle. Si tratta dell'ampliamento di un semplice puzzle che avevo iniziato a programmare usando JavaScript, CSS e HTML consultabile qui (https://github.com/matteo-rossi90/js-simple-puzzle-game)
+**PuzzleGame**
+
+![Screenshot (265)](https://github.com/user-attachments/assets/358e3a79-ec4b-426d-b437-06b112441f67)
+
+
+Creazione e sviluppo di un puzzle. Si tratta dell'ampliamento di un semplice puzzle che avevo iniziato a programmare usando JavaScript, CSS e HTML. 
 
 Rispetto alla versione precedente, sono state aggiunte le seguenti modifiche:
 - possibilità di scegliere il livello di difficoltà (facile, medio, difficile)
