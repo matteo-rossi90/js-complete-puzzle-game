@@ -1,4 +1,4 @@
-Creazione e sviluppo di un puzzle. Si tratta dell'ampliamento di un semplice puzzle che avevo iniziato a programmare usando JavaScript, CSS e HTML. 
+Creazione e sviluppo di un puzzle. Si tratta dell'ampliamento di un semplice puzzle che avevo iniziato a programmare usando JavaScript, CSS e HTML consultabile qui (https://github.com/matteo-rossi90/js-simple-puzzle-game)
 
 Rispetto alla versione precedente, sono state aggiunte le seguenti modifiche:
 - possibilità di scegliere il livello di difficoltà (facile, medio, difficile)
