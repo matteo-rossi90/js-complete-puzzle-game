@@ -1,5 +1,7 @@
 **PuzzleGame**
 
+**consultabile qui**: https://puzzle-js-application.netlify.app/
+
 ![Screenshot (265)](https://github.com/user-attachments/assets/358e3a79-ec4b-426d-b437-06b112441f67)
 
 
